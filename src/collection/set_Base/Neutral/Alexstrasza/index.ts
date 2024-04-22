@@ -1,0 +1,18 @@
+import type ICard from "@/interfaces/card"
+
+const Alexstrasza: ICard<"minion"> = {
+  class: "neutral",
+  rarity: "legendary",
+  health: 8,
+  attack: 8,
+  cost: 9,
+  name: "Alexstrasza",
+  text: "<b>Battlecry:</b> Set a hero's remaining Health to 15.",
+  type: "minion",
+  portrait: "",
+  copy: () => {
+    return { ...Alexstrasza };
+  },
+}
+
+export default Alexstrasza
