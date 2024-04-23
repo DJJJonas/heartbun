@@ -7,12 +7,13 @@ export default interface ICard {
   text: string;
   class: HeroClass;
 
+  id?: string; // will be set during gameplay
   portrait?: string; // url
-  attack?: number;
-  health?: number;
-  maxHealth?: number;
-  rarity?: Rarity;
+  attack?: number; // some cards don't have attack, e.g. spells
+  health?: number; // some cards don't have health, e.g. spells
+  maxHealth?: number; // will be set during gameplay
+  rarity?: Rarity; // some generated cards (tokens) and base cards don't have rarity
   trybe?: MinionTrybe;
 
-  copy: () => ICard;
+  copy: () => ICard; // used for creating copies of this card
 }
