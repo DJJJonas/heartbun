@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const TheBeast: ICard<"minion"> = {
+const TheBeast: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 7,

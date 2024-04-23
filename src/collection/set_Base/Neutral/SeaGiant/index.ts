@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const SeaGiant: ICard<"minion"> = {
+const SeaGiant: ICard = {
   class: "neutral",
   rarity: "epic",
   health: 8,

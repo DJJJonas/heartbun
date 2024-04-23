@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const CultMaster: ICard<"minion"> = {
+const CultMaster: ICard = {
   class: "neutral",
   rarity: "common",
   health: 2,

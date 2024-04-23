@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const Wisp: ICard<"minion"> = {
+const Wisp: ICard = {
   class: "neutral",
   rarity: "common",
   health: 1,

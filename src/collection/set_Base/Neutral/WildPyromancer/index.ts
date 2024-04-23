@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const WildPyromancer: ICard<"minion"> = {
+const WildPyromancer: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 2,

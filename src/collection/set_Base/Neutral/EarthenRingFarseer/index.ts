@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const EarthenRingFarseer: ICard<"minion"> = {
+const EarthenRingFarseer: ICard = {
   class: "neutral",
   rarity: "common",
   health: 3,

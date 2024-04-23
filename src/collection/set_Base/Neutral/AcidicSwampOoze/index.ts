@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const AcidicSwampOoze: ICard<"minion"> = {
+const AcidicSwampOoze: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 2,

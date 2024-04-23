@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const FenCreeper: ICard<"minion"> = {
+const FenCreeper: ICard = {
   class: "neutral",
   rarity: "common",
   health: 6,

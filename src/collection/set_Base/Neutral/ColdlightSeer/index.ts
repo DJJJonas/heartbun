@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const ColdlightSeer: ICard<"minion"> = {
+const ColdlightSeer: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 3,

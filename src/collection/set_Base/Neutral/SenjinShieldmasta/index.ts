@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const SenjinShieldmasta: ICard<"minion"> = {
+const SenjinShieldmasta: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 5,

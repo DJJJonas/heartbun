@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const BootyBayBodyguard: ICard<"minion"> = {
+const BootyBayBodyguard: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 4,

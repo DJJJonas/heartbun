@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const ManaAddict: ICard<"minion"> = {
+const ManaAddict: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 3,

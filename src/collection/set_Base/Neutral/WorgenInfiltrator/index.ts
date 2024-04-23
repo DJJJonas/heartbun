@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const WorgenInfiltrator: ICard<"minion"> = {
+const WorgenInfiltrator: ICard = {
   class: "neutral",
   rarity: "common",
   health: 1,

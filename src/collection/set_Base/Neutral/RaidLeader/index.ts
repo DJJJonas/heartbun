@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const RaidLeader: ICard<"minion"> = {
+const RaidLeader: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 2,

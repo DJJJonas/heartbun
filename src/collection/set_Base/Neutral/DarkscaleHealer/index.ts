@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const DarkscaleHealer: ICard<"minion"> = {
+const DarkscaleHealer: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 5,

@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const RiverCrocolisk: ICard<"minion"> = {
+const RiverCrocolisk: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 3,

@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const Shieldbearer: ICard<"minion"> = {
+const Shieldbearer: ICard = {
   class: "neutral",
   rarity: "common",
   health: 4,

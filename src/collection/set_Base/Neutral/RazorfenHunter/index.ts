@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const RazorfenHunter: ICard<"minion"> = {
+const RazorfenHunter: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 3,

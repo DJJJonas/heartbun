@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const IronbeakOwl: ICard<"minion"> = {
+const IronbeakOwl: ICard = {
   class: "neutral",
   rarity: "common",
   health: 1,

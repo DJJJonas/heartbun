@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const AzureDrake: ICard<"minion"> = {
+const AzureDrake: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 4,

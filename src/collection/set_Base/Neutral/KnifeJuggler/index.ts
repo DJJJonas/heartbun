@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const KnifeJuggler: ICard<"minion"> = {
+const KnifeJuggler: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 2,

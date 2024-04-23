@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const TinkmasterOverspark: ICard<"minion"> = {
+const TinkmasterOverspark: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 3,

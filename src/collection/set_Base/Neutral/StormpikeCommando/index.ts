@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const StormpikeCommando: ICard<"minion"> = {
+const StormpikeCommando: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 2,

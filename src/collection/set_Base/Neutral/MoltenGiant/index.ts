@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const MoltenGiant: ICard<"minion"> = {
+const MoltenGiant: ICard = {
   class: "neutral",
   rarity: "epic",
   health: 8,

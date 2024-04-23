@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const GnomishInventor: ICard<"minion"> = {
+const GnomishInventor: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 4,

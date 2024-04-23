@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const KoboldGeomancer: ICard<"minion"> = {
+const KoboldGeomancer: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 2,

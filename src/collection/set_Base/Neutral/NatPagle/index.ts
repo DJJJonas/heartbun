@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const NatPagle: ICard<"minion"> = {
+const NatPagle: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 4,

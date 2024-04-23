@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const WindfuryHarpy: ICard<"minion"> = {
+const WindfuryHarpy: ICard = {
   class: "neutral",
   rarity: "common",
   health: 5,

@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const GrimscaleOracle: ICard<"minion"> = {
+const GrimscaleOracle: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 1,

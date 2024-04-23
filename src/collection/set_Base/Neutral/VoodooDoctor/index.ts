@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const VoodooDoctor: ICard<"minion"> = {
+const VoodooDoctor: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 1,

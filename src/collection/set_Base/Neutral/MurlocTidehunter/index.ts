@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const MurlocTidehunter: ICard<"minion"> = {
+const MurlocTidehunter: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 1,

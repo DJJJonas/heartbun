@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const GelbinMekkatorque: ICard<"minion"> = {
+const GelbinMekkatorque: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 6,

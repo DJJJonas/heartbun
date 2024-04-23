@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const MurlocWarleader: ICard<"minion"> = {
+const MurlocWarleader: ICard = {
   class: "neutral",
   rarity: "epic",
   health: 3,

@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const Hogger: ICard<"minion"> = {
+const Hogger: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 4,

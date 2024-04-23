@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const FacelessManipulator: ICard<"minion"> = {
+const FacelessManipulator: ICard = {
   class: "neutral",
   rarity: "epic",
   health: 3,

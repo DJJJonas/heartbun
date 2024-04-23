@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const OasisSnapjaw: ICard<"minion"> = {
+const OasisSnapjaw: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 7,

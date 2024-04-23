@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const DragonlingMechanic: ICard<"minion"> = {
+const DragonlingMechanic: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 4,

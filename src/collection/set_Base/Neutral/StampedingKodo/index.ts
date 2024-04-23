@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const StampedingKodo: ICard<"minion"> = {
+const StampedingKodo: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 5,

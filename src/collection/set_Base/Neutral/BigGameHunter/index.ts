@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const BigGameHunter: ICard<"minion"> = {
+const BigGameHunter: ICard = {
   class: "neutral",
   rarity: "epic",
   health: 2,

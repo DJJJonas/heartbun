@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const LootHoarder: ICard<"minion"> = {
+const LootHoarder: ICard = {
   class: "neutral",
   rarity: "common",
   health: 1,

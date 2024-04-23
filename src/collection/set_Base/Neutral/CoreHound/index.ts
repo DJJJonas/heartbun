@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const CoreHound: ICard<"minion"> = {
+const CoreHound: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 5,

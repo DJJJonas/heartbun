@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const PintSizedSummoner: ICard<"minion"> = {
+const PintSizedSummoner: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 2,

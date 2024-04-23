@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const SylvanasWindrunner: ICard<"minion"> = {
+const SylvanasWindrunner: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 5,

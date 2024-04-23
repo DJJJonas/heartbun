@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const Onyxia: ICard<"minion"> = {
+const Onyxia: ICard = {
   class: "neutral",
   rarity: "legendary",
   health: 8,

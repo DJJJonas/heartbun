@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const Demolisher: ICard<"minion"> = {
+const Demolisher: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 4,

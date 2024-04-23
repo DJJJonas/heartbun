@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const ColdlightOracle: ICard<"minion"> = {
+const ColdlightOracle: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 2,

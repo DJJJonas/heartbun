@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const OgreMagi: ICard<"minion"> = {
+const OgreMagi: ICard = {
   class: "neutral",
   rarity: undefined,
   health: 4,

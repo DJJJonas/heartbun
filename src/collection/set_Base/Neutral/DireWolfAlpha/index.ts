@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const DireWolfAlpha: ICard<"minion"> = {
+const DireWolfAlpha: ICard = {
   class: "neutral",
   rarity: "common",
   health: 2,

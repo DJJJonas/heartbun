@@ -1,6 +1,6 @@
 import type ICard from "@/interfaces/card"
 
-const AlarmoBot: ICard<"minion"> = {
+const AlarmoBot: ICard = {
   class: "neutral",
   rarity: "rare",
   health: 3,
