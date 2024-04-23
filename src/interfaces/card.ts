@@ -1,24 +1,18 @@
-import type {
-  Rarity,
-  Class,
-  MinionTrybe as Trybe,
-  Health,
-  Attack,
-  Type,
-} from "@/types";
+import type { Rarity, HeroClass, MinionTrybe, CardType } from "@/types";
 
-export default interface ICard<T extends Type> {
-  type: T;
+export default interface ICard {
+  type: CardType;
   name: string;
   cost: number;
   text: string;
-  class: Class;
+  class: HeroClass;
 
   portrait?: string; // url
-  attack: Attack<T>;
-  health?: Health<T>;
+  attack?: number;
+  health?: number;
+  maxHealth?: number;
   rarity?: Rarity;
-  trybe?: Trybe;
+  trybe?: MinionTrybe;
 
-  copy: () => ICard<T>;
+  copy: () => ICard;
 }
