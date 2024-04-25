@@ -7,7 +7,7 @@ export default interface ICard {
   text: string;
   class: HeroClass;
 
-  id?: string; // will be set during gameplay
+  id?: number; // will be set during gameplay
   portrait?: string; // url
   attack?: number; // some cards don't have attack, e.g. spells
   health?: number; // some cards don't have health, e.g. spells
