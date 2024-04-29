@@ -1,9 +1,11 @@
+import type ICard from "./interfaces/card";
+
 /** Random number generator. min and max are inclusive. */
 export function rng(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-/** shuffle given array using fisher-yates algorithm */
+/** Shuffle given array using fisher-yates algorithm. */
 export function shuffle(arr: Array<any>): void {
   const len = arr.length - 1;
   for (let i = 0; i < arr.length; i++) {
@@ -12,7 +14,32 @@ export function shuffle(arr: Array<any>): void {
   }
 }
 
-/** Python-like range function that returns an array from `0` to `count - 1` */
+/** Python-like range function that returns an array from `0` to `count - 1`. */
 export function range(count: number): Array<number> {
   return Array.from(Array(5), (_, i) => i);
+}
+
+/**
+ * Removes the first card from an array and returns it.
+ * If the array is empty, undefined is returned and the array is not modified.
+ */
+export function drawCard(cards: Array<ICard>): ICard | undefined {
+  const card = cards.shift();
+  return card;
+}
+
+/** Insert card into array and shuffles it. */
+export function shuffleCard(cards: Array<ICard>, card: ICard) {
+  cards.push(card);
+  shuffle(cards);
+}
+
+/**
+ * Removes and return the card with the specified `id`.
+ * If the card is not found, undefined is returned and the array is not modified.
+ */
+export function removeCard(cards: Array<ICard>, id: number): ICard | undefined {
+  const index = cards.findIndex((card) => card.id === id);
+  if (index < 0) return undefined;
+  return cards.splice(index, 1)[0];
 }
