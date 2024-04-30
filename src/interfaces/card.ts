@@ -1,6 +1,6 @@
 import type { Rarity, HeroClass, MinionTrybe, CardType } from "@/types";
 
-export default interface ICard {
+export default interface Card {
   type: CardType;
   name: string;
   cost: number;
@@ -15,5 +15,5 @@ export default interface ICard {
   rarity?: Rarity; // some generated cards (tokens) and base cards don't have rarity
   trybe?: MinionTrybe;
 
-  copy: () => ICard; // used for creating copies of this card
+  copy: () => Card; // used for creating copies of this card
 }

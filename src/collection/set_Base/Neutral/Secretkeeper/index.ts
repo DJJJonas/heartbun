@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const Secretkeeper: ICard = {
+const Secretkeeper: Card = {
   class: "neutral",
   rarity: "rare",
   health: 2,

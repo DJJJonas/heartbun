@@ -1,6 +1,6 @@
-import type ICard from "./card";
+import type Card from "./card";
 
 export default interface Deck {
-  cards: Array<ICard>;
-  hero: ICard;
+  cards: Array<Card>;
+  hero: Card;
 }

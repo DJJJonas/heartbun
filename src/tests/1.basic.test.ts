@@ -1,6 +1,6 @@
 import { test, expect } from "bun:test";
 import Collection from "@/collection/set_Base/Neutral";
-import type ICard from "@/interfaces/card";
+import type Card from "@/interfaces/card";
 import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
 import type Deck from "@/interfaces/deck";
@@ -13,7 +13,7 @@ test("mock", () => {
   const game = new Engine(player1deck, player2deck);
   // Player 1 will receive 3 cards for mulligan
   // Player 2 will receive 4 cards for mulligan
-  const [p1mul, p2mul]: Array<Array<ICard>> = game.start();
+  const [p1mul, p2mul]: Array<Array<Card>> = game.start();
   expect(p1mul).toBeArrayOfSize(3);
   expect(p2mul).toBeArrayOfSize(4);
   // `mulligan` will receive the id of the cards the player
@@ -26,8 +26,8 @@ test("mock", () => {
   const p1 = game.players[0];
   const p2 = game.players[1];
   // Players hands
-  const p1hand: Array<ICard> = p1.hand;
-  const p2hand: Array<ICard> = p2.hand;
+  const p1hand: Array<Card> = p1.hand;
+  const p2hand: Array<Card> = p2.hand;
   expect(game.turnPlayerIndex).toBe(0); // First player's turn
   // Player one check
   expect(p1.health).toBe(30);

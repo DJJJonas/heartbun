@@ -1,4 +1,4 @@
-import type ICard from "./interfaces/card";
+import type Card from "./interfaces/card";
 
 /** Random number generator. min and max are inclusive. */
 export function rng(min: number, max: number): number {
@@ -23,13 +23,13 @@ export function range(count: number): Array<number> {
  * Removes the first card from an array and returns it.
  * If the array is empty, undefined is returned and the array is not modified.
  */
-export function drawCard(cards: Array<ICard>): ICard | undefined {
+export function drawCard(cards: Array<Card>): Card | undefined {
   const card = cards.shift();
   return card;
 }
 
 /** Insert card into array and shuffles it. */
-export function shuffleCard(cards: Array<ICard>, card: ICard) {
+export function shuffleCard(cards: Array<Card>, card: Card) {
   cards.push(card);
   shuffle(cards);
 }
@@ -38,7 +38,7 @@ export function shuffleCard(cards: Array<ICard>, card: ICard) {
  * Removes and return the card with the specified `id`.
  * If the card is not found, undefined is returned and the array is not modified.
  */
-export function removeCard(cards: Array<ICard>, id: number): ICard | undefined {
+export function removeCard(cards: Array<Card>, id: number): Card | undefined {
   const index = cards.findIndex((card) => card.id === id);
   if (index < 0) return undefined;
   return cards.splice(index, 1)[0];

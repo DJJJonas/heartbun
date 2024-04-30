@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const FlesheatingGhoul: ICard = {
+const FlesheatingGhoul: Card = {
   class: "neutral",
   rarity: "common",
   health: 3,

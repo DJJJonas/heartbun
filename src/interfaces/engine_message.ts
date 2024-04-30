@@ -1,4 +1,4 @@
-import type ICard from "./card";
+import type Card from "./card";
 
 /**
  * Type
@@ -15,5 +15,5 @@ import type ICard from "./card";
 export interface EngineMessage {
   type: "request" | "response";
   action: "mulligan" | "free";
-  cards: Array<ICard>;
+  cards: Array<Card>;
 }

@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const GurubashiBerserker: ICard = {
+const GurubashiBerserker: Card = {
   class: "neutral",
   rarity: undefined,
   health: 7,

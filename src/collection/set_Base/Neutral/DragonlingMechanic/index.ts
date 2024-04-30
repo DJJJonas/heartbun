@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const DragonlingMechanic: ICard = {
+const DragonlingMechanic: Card = {
   class: "neutral",
   rarity: undefined,
   health: 4,

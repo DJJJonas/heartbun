@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const VioletTeacher: ICard = {
+const VioletTeacher: Card = {
   class: "neutral",
   rarity: "rare",
   health: 5,

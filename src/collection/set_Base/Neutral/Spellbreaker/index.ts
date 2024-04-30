@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const Spellbreaker: ICard = {
+const Spellbreaker: Card = {
   class: "neutral",
   rarity: "common",
   health: 3,

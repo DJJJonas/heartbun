@@ -1,6 +1,6 @@
-import type ICard from "@/interfaces/card"
+import type Card from "@/interfaces/card"
 
-const LorewalkerCho: ICard = {
+const LorewalkerCho: Card = {
   class: "neutral",
   rarity: "legendary",
   health: 4,
