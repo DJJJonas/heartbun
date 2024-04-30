@@ -9,4 +9,5 @@ export default interface Player {
   mana: number;
   maxMana: number;
   maxManaLimit: number;
+  minions: Array<ICard>;
 }

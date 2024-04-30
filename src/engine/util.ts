@@ -11,5 +11,6 @@ export function newPlayer(deck: Deck): Player {
     mana: 0,
     maxMana: 0,
     maxManaLimit: 10,
+    minions: [],
   };
 }
