@@ -34,3 +34,5 @@ export type HeroClass =
   | "warrior";
 
 export type EngineEvent = (c: EventContext, e: EventManager) => void;
+
+export type EventEngineName = "battlecry" | "startOfGame";

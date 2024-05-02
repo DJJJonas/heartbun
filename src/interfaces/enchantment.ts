@@ -8,5 +8,5 @@ export default interface Enchantment {
   maxHealth?: number;
   trybe?: MinionTrybe;
 
-  battlecryEvents: Array<EngineEvent>;
+  events: Map<string, Array<EngineEvent>>;
 }
