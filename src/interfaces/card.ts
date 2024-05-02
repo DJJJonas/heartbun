@@ -1,4 +1,5 @@
-import type { Rarity, HeroClass, MinionTrybe, CardType } from "@/types";
+import type { CardType, HeroClass, MinionTrybe, Rarity } from "@/types";
+import type Enchantment from "./enchantment";
 
 export default interface Card {
   type: CardType;
@@ -7,13 +8,14 @@ export default interface Card {
   text: string;
   class: HeroClass;
 
-  id?: number; // will be set during gameplay
+  id?: number; // set during gameplay
   portrait?: string; // url
   attack?: number; // some cards don't have attack, e.g. spells
   health?: number; // some cards don't have health, e.g. spells
-  maxHealth?: number; // will be set during gameplay
+  maxHealth?: number; // set during gameplay
   rarity?: Rarity; // some generated cards (tokens) and base cards don't have rarity
   trybe?: MinionTrybe;
 
-  copy: () => Card; // used for creating copies of this card
+  defaultEnchantments?: Array<Enchantment>; // enchantment of the card's text
+  enchantments?: Array<Enchantment>; // set during gameplay
 }
