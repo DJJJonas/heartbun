@@ -1,9 +1,11 @@
-import type { MinionTrybe } from "@/types";
+import type { EngineEvent, MinionTrybe } from "@/types";
 
 export default interface Enchantment {
   id: number;
-  cost: number;
-  attack: number;
-  maxHealth: number;
-  trybe: MinionTrybe;
+  cost?: number;
+  attack?: number;
+  maxHealth?: number;
+  trybe?: MinionTrybe;
+
+  battlecryEvents: Array<EngineEvent>;
 }
