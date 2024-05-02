@@ -35,4 +35,4 @@ export type HeroClass =
 
 export type EngineEvent = (c: EventContext, e: EventManager) => void;
 
-export type EventEngineName = "battlecry" | "startOfGame";
+export type EngineEventName = "battlecry" | "startOfGame";
