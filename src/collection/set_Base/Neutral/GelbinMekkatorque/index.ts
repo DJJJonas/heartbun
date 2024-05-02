@@ -10,9 +10,6 @@ const GelbinMekkatorque: Card = {
   text: "<b>Battlecry:</b> Summon an AWESOME invention.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...GelbinMekkatorque };
-  },
 }
 
 export default GelbinMekkatorque

@@ -10,9 +10,6 @@ const MurlocWarleader: Card = {
   text: "ALL other murlocs have +2/+1.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MurlocWarleader };
-  },
 }
 
 export default MurlocWarleader

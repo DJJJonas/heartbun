@@ -10,9 +10,6 @@ const Nightblade: Card = {
   text: "<b>Battlecry: </b>Deal 3 damage to the enemy hero.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Nightblade };
-  },
 }
 
 export default Nightblade

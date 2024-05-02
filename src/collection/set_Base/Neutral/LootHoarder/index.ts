@@ -10,9 +10,6 @@ const LootHoarder: Card = {
   text: "<b>Deathrattle:</b> Draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...LootHoarder };
-  },
 }
 
 export default LootHoarder

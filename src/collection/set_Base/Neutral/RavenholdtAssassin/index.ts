@@ -10,9 +10,6 @@ const RavenholdtAssassin: Card = {
   text: "<b>Stealth</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RavenholdtAssassin };
-  },
 }
 
 export default RavenholdtAssassin

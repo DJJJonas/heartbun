@@ -10,9 +10,6 @@ const StampedingKodo: Card = {
   text: "<b>Battlecry:</b> Destroy a random enemy minion with 2 or less Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...StampedingKodo };
-  },
 }
 
 export default StampedingKodo

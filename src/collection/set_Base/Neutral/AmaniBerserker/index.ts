@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const AmaniBerserker: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const AmaniBerserker: Card = {
   text: "<b>Enrage:</b> +3 Attack",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AmaniBerserker };
-  },
-}
+};
 
-export default AmaniBerserker
+export default AmaniBerserker;

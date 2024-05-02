@@ -10,9 +10,6 @@ const LorewalkerCho: Card = {
   text: "Whenever a player casts a spell, put a copy into the other player’s hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...LorewalkerCho };
-  },
 }
 
 export default LorewalkerCho

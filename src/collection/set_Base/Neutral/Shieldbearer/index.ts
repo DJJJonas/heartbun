@@ -10,9 +10,6 @@ const Shieldbearer: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Shieldbearer };
-  },
 }
 
 export default Shieldbearer

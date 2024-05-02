@@ -10,9 +10,6 @@ const SouthseaCaptain: Card = {
   text: "Your other Pirates have +1/+1.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SouthseaCaptain };
-  },
 }
 
 export default SouthseaCaptain

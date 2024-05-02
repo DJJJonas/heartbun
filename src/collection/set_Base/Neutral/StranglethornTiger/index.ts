@@ -10,9 +10,6 @@ const StranglethornTiger: Card = {
   text: "<b>Stealth</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...StranglethornTiger };
-  },
 }
 
 export default StranglethornTiger

@@ -10,9 +10,6 @@ const HarvestGolem: Card = {
   text: "<b>Deathrattle:</b> Summon a 2/1 Damaged Golem.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...HarvestGolem };
-  },
 }
 
 export default HarvestGolem

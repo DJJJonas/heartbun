@@ -10,9 +10,6 @@ const Ysera: Card = {
   text: "At the end of your turn, add a Dream Card to your hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Ysera };
-  },
 };
 
 export default Ysera;

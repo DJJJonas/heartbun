@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const FenCreeper: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const FenCreeper: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...FenCreeper };
-  },
-}
+};
 
-export default FenCreeper
+export default FenCreeper;

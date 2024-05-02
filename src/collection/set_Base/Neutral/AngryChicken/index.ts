@@ -10,9 +10,6 @@ const AngryChicken: Card = {
   text: "<b>Enrage:</b> +5 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AngryChicken };
-  },
 }
 
 export default AngryChicken

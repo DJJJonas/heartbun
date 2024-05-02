@@ -10,9 +10,6 @@ const CoreHound: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...CoreHound };
-  },
 }
 
 export default CoreHound

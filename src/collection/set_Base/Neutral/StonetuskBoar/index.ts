@@ -10,9 +10,6 @@ const StonetuskBoar: Card = {
   text: "<b>Charge</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...StonetuskBoar };
-  },
 }
 
 export default StonetuskBoar

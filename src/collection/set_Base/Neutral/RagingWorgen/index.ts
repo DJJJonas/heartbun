@@ -10,9 +10,6 @@ const RagingWorgen: Card = {
   text: "<b>Enrage:</b> <b>Windfury</b> and +1 Attack",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RagingWorgen };
-  },
 }
 
 export default RagingWorgen

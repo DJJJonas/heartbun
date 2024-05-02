@@ -10,9 +10,6 @@ const GnomishInventor: Card = {
   text: "<b>Battlecry:</b> Draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...GnomishInventor };
-  },
 }
 
 export default GnomishInventor

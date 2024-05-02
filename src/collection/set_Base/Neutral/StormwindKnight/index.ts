@@ -10,9 +10,6 @@ const StormwindKnight: Card = {
   text: "<b>Charge</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...StormwindKnight };
-  },
 }
 
 export default StormwindKnight

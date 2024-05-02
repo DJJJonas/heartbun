@@ -10,9 +10,6 @@ const MogushanWarden: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MogushanWarden };
-  },
 }
 
 export default MogushanWarden

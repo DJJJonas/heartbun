@@ -10,9 +10,6 @@ const BluegillWarrior: Card = {
   text: "<b>Charge</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BluegillWarrior };
-  },
 }
 
 export default BluegillWarrior

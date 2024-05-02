@@ -10,9 +10,6 @@ const ManaAddict: Card = {
   text: "Whenever you cast a spell, gain +2 Attack this turn.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ManaAddict };
-  },
 }
 
 export default ManaAddict

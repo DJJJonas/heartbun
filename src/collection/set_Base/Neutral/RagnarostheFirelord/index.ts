@@ -10,9 +10,6 @@ const RagnarostheFirelord: Card = {
   text: "Can't attack. At the end of your turn, deal 8 damage to a random enemy.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RagnarostheFirelord };
-  },
 }
 
 export default RagnarostheFirelord

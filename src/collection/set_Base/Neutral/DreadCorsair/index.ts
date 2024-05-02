@@ -10,9 +10,6 @@ const DreadCorsair: Card = {
   text: "<b>Taunt</b> Costs (1) less per Attack of your weapon.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DreadCorsair };
-  },
 }
 
 export default DreadCorsair

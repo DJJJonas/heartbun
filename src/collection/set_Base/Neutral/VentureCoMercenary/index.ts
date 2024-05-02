@@ -10,9 +10,6 @@ const VentureCoMercenary: Card = {
   text: "Your minions cost (3) more.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...VentureCoMercenary };
-  },
 }
 
 export default VentureCoMercenary

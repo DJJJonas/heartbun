@@ -10,9 +10,6 @@ const GrimscaleOracle: Card = {
   text: "ALL other Murlocs have +1 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...GrimscaleOracle };
-  },
 }
 
 export default GrimscaleOracle

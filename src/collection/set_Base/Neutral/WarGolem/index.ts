@@ -10,9 +10,6 @@ const WarGolem: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...WarGolem };
-  },
 }
 
 export default WarGolem

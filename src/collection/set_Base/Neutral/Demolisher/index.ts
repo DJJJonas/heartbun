@@ -10,9 +10,6 @@ const Demolisher: Card = {
   text: "At the start of your turn, deal 2 damage to a random enemy.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Demolisher };
-  },
 }
 
 export default Demolisher

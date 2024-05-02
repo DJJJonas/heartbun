@@ -10,9 +10,6 @@ const LeperGnome: Card = {
   text: "<b>Deathrattle:</b> Deal 2 damage to the enemy hero.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...LeperGnome };
-  },
 }
 
 export default LeperGnome

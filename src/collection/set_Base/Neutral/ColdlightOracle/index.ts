@@ -10,9 +10,6 @@ const ColdlightOracle: Card = {
   text: "<b>Battlecry:</b> Each player draws 2 cards.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ColdlightOracle };
-  },
 }
 
 export default ColdlightOracle

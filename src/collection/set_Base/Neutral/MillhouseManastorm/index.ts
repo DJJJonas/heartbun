@@ -10,9 +10,6 @@ const MillhouseManastorm: Card = {
   text: "<b>Battlecry:</b> Enemy spells cost (0) next turn.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MillhouseManastorm };
-  },
 }
 
 export default MillhouseManastorm

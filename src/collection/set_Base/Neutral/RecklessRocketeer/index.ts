@@ -10,9 +10,6 @@ const RecklessRocketeer: Card = {
   text: "<b>Charge</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RecklessRocketeer };
-  },
 }
 
 export default RecklessRocketeer

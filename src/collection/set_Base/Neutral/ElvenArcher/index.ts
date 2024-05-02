@@ -10,9 +10,6 @@ const ElvenArcher: Card = {
   text: "<b>Battlecry:</b> Deal 1 damage.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ElvenArcher };
-  },
 }
 
 export default ElvenArcher

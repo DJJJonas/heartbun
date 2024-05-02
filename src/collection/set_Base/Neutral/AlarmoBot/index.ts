@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const AlarmoBot: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const AlarmoBot: Card = {
   text: "At the start of your turn, swap this minion with a random one in your hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AlarmoBot };
-  },
-}
+};
 
-export default AlarmoBot
+export default AlarmoBot;

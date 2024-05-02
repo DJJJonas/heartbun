@@ -10,9 +10,6 @@ const BaronGeddon: Card = {
   text: "At the end of your turn, deal 2 damage to ALL other characters.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BaronGeddon };
-  },
 }
 
 export default BaronGeddon

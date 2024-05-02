@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const Alexstrasza: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const Alexstrasza: Card = {
   text: "<b>Battlecry:</b> Set a hero's remaining Health to 15.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Alexstrasza };
-  },
-}
+};
 
-export default Alexstrasza
+export default Alexstrasza;

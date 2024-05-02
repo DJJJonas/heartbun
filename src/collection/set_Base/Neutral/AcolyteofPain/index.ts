@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const AcolyteofPain: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const AcolyteofPain: Card = {
   text: "Whenever this minion takes damage, draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AcolyteofPain };
-  },
-}
+};
 
-export default AcolyteofPain
+export default AcolyteofPain;

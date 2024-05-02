@@ -10,9 +10,6 @@ const JunglePanther: Card = {
   text: "<b>Stealth</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...JunglePanther };
-  },
 }
 
 export default JunglePanther

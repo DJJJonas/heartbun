@@ -10,9 +10,6 @@ const WildPyromancer: Card = {
   text: "After you cast a spell, deal 1 damage to ALL minions.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...WildPyromancer };
-  },
 }
 
 export default WildPyromancer

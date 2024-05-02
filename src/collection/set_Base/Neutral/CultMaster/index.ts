@@ -10,9 +10,6 @@ const CultMaster: Card = {
   text: "After a friendly minion dies, draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...CultMaster };
-  },
 }
 
 export default CultMaster

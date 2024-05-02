@@ -10,9 +10,6 @@ const FacelessManipulator: Card = {
   text: "<b>Battlecry:</b> Choose a minion and become a copy of it.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...FacelessManipulator };
-  },
 }
 
 export default FacelessManipulator

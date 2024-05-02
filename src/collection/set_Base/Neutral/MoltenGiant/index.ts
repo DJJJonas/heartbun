@@ -10,9 +10,6 @@ const MoltenGiant: Card = {
   text: "Costs (1) less for each damage your hero has taken.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MoltenGiant };
-  },
 }
 
 export default MoltenGiant

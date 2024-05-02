@@ -10,9 +10,6 @@ const SilverHandKnight: Card = {
   text: "<b>Battlecry:</b> Summon a 2/2 Squire.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SilverHandKnight };
-  },
 }
 
 export default SilverHandKnight

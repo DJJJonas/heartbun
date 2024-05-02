@@ -10,9 +10,6 @@ const BootyBayBodyguard: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BootyBayBodyguard };
-  },
 }
 
 export default BootyBayBodyguard

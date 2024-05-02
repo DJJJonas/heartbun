@@ -10,9 +10,6 @@ const TaurenWarrior: Card = {
   text: "<b>Taunt</b>. <b>Enrage:</b> +3 Attack",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...TaurenWarrior };
-  },
 }
 
 export default TaurenWarrior

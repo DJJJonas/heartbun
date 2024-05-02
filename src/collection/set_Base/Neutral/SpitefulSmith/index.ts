@@ -10,9 +10,6 @@ const SpitefulSmith: Card = {
   text: "<b>Enrage:</b> Your weapon has +2 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SpitefulSmith };
-  },
 }
 
 export default SpitefulSmith

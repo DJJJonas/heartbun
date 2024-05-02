@@ -10,9 +10,6 @@ const Wisp: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Wisp };
-  },
 }
 
 export default Wisp

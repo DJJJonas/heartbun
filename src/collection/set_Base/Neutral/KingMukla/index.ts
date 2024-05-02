@@ -10,9 +10,6 @@ const KingMukla: Card = {
   text: "<b>Battlecry:</b> Give your opponent 2 Bananas.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...KingMukla };
-  },
 }
 
 export default KingMukla

@@ -10,9 +10,6 @@ const YouthfulBrewmaster: Card = {
   text: "<b>Battlecry:</b> Return a friendly minion from the battlefield to your hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...YouthfulBrewmaster };
-  },
 }
 
 export default YouthfulBrewmaster

@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const ArcaneGolem: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const ArcaneGolem: Card = {
   text: "<b>Charge</b>. <b>Battlecry:</b> Give your opponent a Mana Crystal.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ArcaneGolem };
-  },
-}
+};
 
-export default ArcaneGolem
+export default ArcaneGolem;

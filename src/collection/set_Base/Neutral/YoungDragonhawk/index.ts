@@ -10,9 +10,6 @@ const YoungDragonhawk: Card = {
   text: "<b>Windfury</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...YoungDragonhawk };
-  },
 }
 
 export default YoungDragonhawk

@@ -10,9 +10,6 @@ const PriestessofElune: Card = {
   text: "<b>Battlecry:</b> Restore 4 Health to your hero.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...PriestessofElune };
-  },
 }
 
 export default PriestessofElune

@@ -10,9 +10,6 @@ const Onyxia: Card = {
   text: "<b>Battlecry:</b> Summon 1/1 Whelps until your side of the battlefield is full.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Onyxia };
-  },
 }
 
 export default Onyxia

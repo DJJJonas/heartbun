@@ -10,9 +10,6 @@ const MindControlTech: Card = {
   text: "<b>Battlecry:</b> If your opponent has 4 or more minions, take control of one at random.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MindControlTech };
-  },
 }
 
 export default MindControlTech

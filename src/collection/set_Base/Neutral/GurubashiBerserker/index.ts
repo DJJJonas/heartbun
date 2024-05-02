@@ -10,9 +10,6 @@ const GurubashiBerserker: Card = {
   text: "Whenever this minion takes damage, gain +3 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...GurubashiBerserker };
-  },
 }
 
 export default GurubashiBerserker

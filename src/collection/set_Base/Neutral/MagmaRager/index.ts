@@ -10,9 +10,6 @@ const MagmaRager: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MagmaRager };
-  },
 }
 
 export default MagmaRager

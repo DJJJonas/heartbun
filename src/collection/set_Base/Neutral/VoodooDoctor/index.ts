@@ -10,9 +10,6 @@ const VoodooDoctor: Card = {
   text: "<b>Battlecry:</b> Restore 2 Health.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...VoodooDoctor };
-  },
 }
 
 export default VoodooDoctor

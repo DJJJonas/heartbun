@@ -10,9 +10,6 @@ const ColdlightSeer: Card = {
   text: "<b>Battlecry:</b> Give ALL other Murlocs +2 Health.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ColdlightSeer };
-  },
 }
 
 export default ColdlightSeer

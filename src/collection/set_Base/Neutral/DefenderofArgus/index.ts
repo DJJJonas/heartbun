@@ -10,9 +10,6 @@ const DefenderofArgus: Card = {
   text: "<b>Battlecry:</b> Give adjacent minions +1/+1 and <b>Taunt</b>.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DefenderofArgus };
-  },
 }
 
 export default DefenderofArgus

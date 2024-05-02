@@ -10,9 +10,6 @@ const BloodKnight: Card = {
   text: "<b>Battlecry:</b> All minions lose <b>Divine Shield</b>. Gain +3/+3 for each Shield lost.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BloodKnight };
-  },
 }
 
 export default BloodKnight

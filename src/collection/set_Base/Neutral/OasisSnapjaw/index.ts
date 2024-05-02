@@ -10,9 +10,6 @@ const OasisSnapjaw: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...OasisSnapjaw };
-  },
 }
 
 export default OasisSnapjaw

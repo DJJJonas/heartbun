@@ -10,9 +10,6 @@ const TheBeast: Card = {
   text: "<b>Deathrattle:</b> Summon a 3/3 Pip Quickwit for your opponent.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...TheBeast };
-  },
 }
 
 export default TheBeast

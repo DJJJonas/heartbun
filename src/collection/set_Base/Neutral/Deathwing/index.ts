@@ -10,9 +10,6 @@ const Deathwing: Card = {
   text: "<b>Battlecry:</b> Destroy all other minions and discard your hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Deathwing };
-  },
 }
 
 export default Deathwing

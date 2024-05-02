@@ -10,9 +10,6 @@ const WindfuryHarpy: Card = {
   text: "<b>Windfury</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...WindfuryHarpy };
-  },
 }
 
 export default WindfuryHarpy

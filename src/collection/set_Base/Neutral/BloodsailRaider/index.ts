@@ -10,9 +10,6 @@ const BloodsailRaider: Card = {
   text: "<b>Battlecry:</b> Gain Attack equal to the Attack of your weapon.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BloodsailRaider };
-  },
 }
 
 export default BloodsailRaider

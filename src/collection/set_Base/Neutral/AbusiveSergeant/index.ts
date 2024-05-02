@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const AbusiveSergeant: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const AbusiveSergeant: Card = {
   text: "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AbusiveSergeant };
-  },
-}
+};
 
-export default AbusiveSergeant
+export default AbusiveSergeant;

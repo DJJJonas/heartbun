@@ -10,9 +10,6 @@ const SeaGiant: Card = {
   text: "Costs (1) less for each other minion on the battlefield.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SeaGiant };
-  },
 }
 
 export default SeaGiant

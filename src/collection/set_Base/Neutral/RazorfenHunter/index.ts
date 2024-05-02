@@ -10,9 +10,6 @@ const RazorfenHunter: Card = {
   text: "<b>Battlecry:</b> Summon a 1/1 Boar.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RazorfenHunter };
-  },
 }
 
 export default RazorfenHunter

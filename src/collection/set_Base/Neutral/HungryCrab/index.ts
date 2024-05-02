@@ -10,9 +10,6 @@ const HungryCrab: Card = {
   text: "<b>Battlecry:</b> Destroy a Murloc and gain +2/+2.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...HungryCrab };
-  },
 }
 
 export default HungryCrab

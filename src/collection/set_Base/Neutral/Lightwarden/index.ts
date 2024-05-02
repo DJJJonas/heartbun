@@ -10,9 +10,6 @@ const Lightwarden: Card = {
   text: "Whenever a character is healed, gain +2 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Lightwarden };
-  },
 }
 
 export default Lightwarden

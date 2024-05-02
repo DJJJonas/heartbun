@@ -10,9 +10,6 @@ const TinkmasterOverspark: Card = {
   text: "<b>Battlecry:</b> Transform another random minion into a 5/5 Devilsaur or a 1/1 Squirrel.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...TinkmasterOverspark };
-  },
 }
 
 export default TinkmasterOverspark

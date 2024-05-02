@@ -10,9 +10,6 @@ const SilvermoonGuardian: Card = {
   text: "<b>Divine Shield</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SilvermoonGuardian };
-  },
 }
 
 export default SilvermoonGuardian

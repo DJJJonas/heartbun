@@ -10,9 +10,6 @@ const Wolfrider: Card = {
   text: "<b>Charge</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Wolfrider };
-  },
 }
 
 export default Wolfrider

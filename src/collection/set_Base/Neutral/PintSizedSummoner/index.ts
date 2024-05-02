@@ -10,9 +10,6 @@ const PintSizedSummoner: Card = {
   text: "The first minion you play each turn costs (1) less.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...PintSizedSummoner };
-  },
 }
 
 export default PintSizedSummoner

@@ -10,9 +10,6 @@ const Nozdormu: Card = {
   text: "Players only have 15 seconds to take their turns.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Nozdormu };
-  },
 }
 
 export default Nozdormu

@@ -10,9 +10,6 @@ const SilverbackPatriarch: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SilverbackPatriarch };
-  },
 }
 
 export default SilverbackPatriarch

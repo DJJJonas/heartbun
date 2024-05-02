@@ -10,9 +10,6 @@ const StormpikeCommando: Card = {
   text: "<b>Battlecry:</b> Deal 2 damage.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...StormpikeCommando };
-  },
 }
 
 export default StormpikeCommando

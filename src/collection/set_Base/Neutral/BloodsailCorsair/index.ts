@@ -10,9 +10,6 @@ const BloodsailCorsair: Card = {
   text: "<b>Battlecry:</b> Remove 1 Durability from your opponent's weapon.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BloodsailCorsair };
-  },
 }
 
 export default BloodsailCorsair

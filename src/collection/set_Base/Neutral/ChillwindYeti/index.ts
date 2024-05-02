@@ -10,9 +10,6 @@ const ChillwindYeti: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ChillwindYeti };
-  },
 }
 
 export default ChillwindYeti

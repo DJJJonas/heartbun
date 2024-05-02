@@ -10,9 +10,6 @@ const AzureDrake: Card = {
   text: "<b>Spell Damage +1</b> <b>Battlecry:</b> Draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AzureDrake };
-  },
 }
 
 export default AzureDrake

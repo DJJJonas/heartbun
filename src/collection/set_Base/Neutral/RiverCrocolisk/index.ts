@@ -10,9 +10,6 @@ const RiverCrocolisk: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RiverCrocolisk };
-  },
 }
 
 export default RiverCrocolisk

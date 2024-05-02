@@ -10,9 +10,6 @@ const LordoftheArena: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...LordoftheArena };
-  },
 }
 
 export default LordoftheArena

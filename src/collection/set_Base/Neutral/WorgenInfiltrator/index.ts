@@ -10,9 +10,6 @@ const WorgenInfiltrator: Card = {
   text: "<b>Stealth</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...WorgenInfiltrator };
-  },
 }
 
 export default WorgenInfiltrator

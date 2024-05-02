@@ -10,9 +10,6 @@ const Malygos: Card = {
   text: "<b>Spell Damage +5</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Malygos };
-  },
 }
 
 export default Malygos

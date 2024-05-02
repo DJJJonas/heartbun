@@ -10,9 +10,6 @@ const BigGameHunter: Card = {
   text: "<b>Battlecry:</b> Destroy a minion with 7 or more Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BigGameHunter };
-  },
 }
 
 export default BigGameHunter

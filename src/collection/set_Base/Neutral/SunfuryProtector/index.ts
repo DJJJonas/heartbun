@@ -10,9 +10,6 @@ const SunfuryProtector: Card = {
   text: "<b>Battlecry:</b> Give adjacent minions <b>Taunt</b>.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SunfuryProtector };
-  },
 }
 
 export default SunfuryProtector

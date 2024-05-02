@@ -10,9 +10,6 @@ const DarkIronDwarf: Card = {
   text: "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DarkIronDwarf };
-  },
 }
 
 export default DarkIronDwarf

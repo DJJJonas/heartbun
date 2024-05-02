@@ -10,9 +10,6 @@ const CrazedAlchemist: Card = {
   text: "<b>Battlecry:</b> Swap the Attack and Health of a minion.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...CrazedAlchemist };
-  },
 }
 
 export default CrazedAlchemist

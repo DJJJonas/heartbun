@@ -10,9 +10,6 @@ const SenjinShieldmasta: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SenjinShieldmasta };
-  },
 }
 
 export default SenjinShieldmasta

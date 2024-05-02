@@ -10,9 +10,6 @@ const EliteTaurenChieftain: Card = {
   text: "<b>Battlecry:</b> Give both players the power to ROCK! (with a Power Chord card)",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...EliteTaurenChieftain };
-  },
 }
 
 export default EliteTaurenChieftain

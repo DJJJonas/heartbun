@@ -10,9 +10,6 @@ const ManaWraith: Card = {
   text: "ALL minions cost (1) more.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ManaWraith };
-  },
 }
 
 export default ManaWraith

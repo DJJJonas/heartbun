@@ -10,9 +10,6 @@ const OldMurkEye: Card = {
   text: "<b>Charge</b>. Has +1 Attack for each other Murloc on the battlefield.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...OldMurkEye };
-  },
 }
 
 export default OldMurkEye

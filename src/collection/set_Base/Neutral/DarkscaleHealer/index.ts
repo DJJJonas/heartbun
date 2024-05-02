@@ -10,9 +10,6 @@ const DarkscaleHealer: Card = {
   text: "<b>Battlecry:</b> Restore 2 Health to all friendly characters.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DarkscaleHealer };
-  },
 }
 
 export default DarkscaleHealer

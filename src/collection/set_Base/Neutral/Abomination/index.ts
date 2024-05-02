@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const Abomination: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const Abomination: Card = {
   text: "<b>Taunt</b>. <b>Deathrattle:</b> Deal 2 damage to ALL characters.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Abomination };
-  },
-}
+};
 
-export default Abomination
+export default Abomination;

@@ -10,9 +10,6 @@ const MountainGiant: Card = {
   text: "Costs (1) less for each other card in your hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MountainGiant };
-  },
 }
 
 export default MountainGiant

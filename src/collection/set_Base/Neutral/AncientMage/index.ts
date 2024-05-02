@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const AncientMage: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const AncientMage: Card = {
   text: "<b>Battlecry:</b> Give adjacent minions <b>Spell Damage +1</b>.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AncientMage };
-  },
-}
+};
 
-export default AncientMage
+export default AncientMage;

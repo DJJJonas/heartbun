@@ -10,9 +10,6 @@ const DragonlingMechanic: Card = {
   text: "<b>Battlecry:</b> Summon a 2/1 Mechanical Dragonling.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DragonlingMechanic };
-  },
 }
 
 export default DragonlingMechanic

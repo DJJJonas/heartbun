@@ -10,9 +10,6 @@ const ScarletCrusader: Card = {
   text: "<b>Divine Shield</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ScarletCrusader };
-  },
 }
 
 export default ScarletCrusader

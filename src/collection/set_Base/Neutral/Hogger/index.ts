@@ -10,9 +10,6 @@ const Hogger: Card = {
   text: "At the end of your turn, summon a 2/2 Gnoll with <b>Taunt</b>.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Hogger };
-  },
 }
 
 export default Hogger

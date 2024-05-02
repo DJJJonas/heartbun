@@ -10,9 +10,6 @@ const TwilightDrake: Card = {
   text: "<b>Battlecry:</b> Gain +1 Health for each card in your hand.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...TwilightDrake };
-  },
 }
 
 export default TwilightDrake

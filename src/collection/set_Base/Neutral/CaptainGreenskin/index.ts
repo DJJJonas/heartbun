@@ -10,9 +10,6 @@ const CaptainGreenskin: Card = {
   text: "<b>Battlecry:</b> Give your weapon +1/+1.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...CaptainGreenskin };
-  },
 }
 
 export default CaptainGreenskin

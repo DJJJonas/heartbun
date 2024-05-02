@@ -10,9 +10,6 @@ const AncientWatcher: Card = {
   text: "Can't attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AncientWatcher };
-  },
 }
 
 export default AncientWatcher

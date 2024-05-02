@@ -10,9 +10,6 @@ const KnifeJuggler: Card = {
   text: "After you summon a minion, deal 1 damage to a random enemy.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...KnifeJuggler };
-  },
 }
 
 export default KnifeJuggler

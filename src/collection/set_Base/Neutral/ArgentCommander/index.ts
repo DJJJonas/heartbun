@@ -10,9 +10,6 @@ const ArgentCommander: Card = {
   text: "<b>Charge</b> <b>Divine Shield</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ArgentCommander };
-  },
 }
 
 export default ArgentCommander

@@ -10,9 +10,6 @@ const SouthseaDeckhand: Card = {
   text: "Has <b>Charge</b> while you have a weapon equipped.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SouthseaDeckhand };
-  },
 }
 
 export default SouthseaDeckhand

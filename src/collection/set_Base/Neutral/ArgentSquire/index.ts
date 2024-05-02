@@ -10,9 +10,6 @@ const ArgentSquire: Card = {
   text: "<b>Divine Shield</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ArgentSquire };
-  },
 }
 
 export default ArgentSquire

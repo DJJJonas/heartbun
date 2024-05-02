@@ -10,9 +10,6 @@ const CairneBloodhoof: Card = {
   text: "<b>Deathrattle:</b> Summon a 4/5 Baine Bloodhoof.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...CairneBloodhoof };
-  },
 }
 
 export default CairneBloodhoof

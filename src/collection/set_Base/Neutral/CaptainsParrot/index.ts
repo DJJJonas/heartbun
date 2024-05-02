@@ -10,9 +10,6 @@ const CaptainsParrot: Card = {
   text: "<b>Battlecry:</b> Draw a Pirate from your deck.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...CaptainsParrot };
-  },
 }
 
 export default CaptainsParrot

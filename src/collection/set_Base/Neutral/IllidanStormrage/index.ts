@@ -10,9 +10,6 @@ const IllidanStormrage: Card = {
   text: "Whenever you play a card, summon a 2/1 Flame of Azzinoth.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...IllidanStormrage };
-  },
 }
 
 export default IllidanStormrage

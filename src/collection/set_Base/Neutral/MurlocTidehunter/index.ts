@@ -10,9 +10,6 @@ const MurlocTidehunter: Card = {
   text: "<b>Battlecry:</b> Summon a 1/1 Murloc Scout.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MurlocTidehunter };
-  },
 }
 
 export default MurlocTidehunter

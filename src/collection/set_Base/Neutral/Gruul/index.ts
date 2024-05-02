@@ -10,9 +10,6 @@ const Gruul: Card = {
   text: "At the end of each turn, gain +1/+1 .",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Gruul };
-  },
 }
 
 export default Gruul

@@ -10,9 +10,6 @@ const BloodmageThalnos: Card = {
   text: "<b>Spell Damage +1</b> <b>Deathrattle:</b> Draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BloodmageThalnos };
-  },
 }
 
 export default BloodmageThalnos

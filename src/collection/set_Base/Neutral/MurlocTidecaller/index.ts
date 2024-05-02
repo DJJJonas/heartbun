@@ -10,9 +10,6 @@ const MurlocTidecaller: Card = {
   text: "Whenever a Murloc is summoned, gain +1 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MurlocTidecaller };
-  },
 }
 
 export default MurlocTidecaller

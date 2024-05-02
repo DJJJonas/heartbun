@@ -1,4 +1,4 @@
-import type Card from "@/interfaces/card"
+import type Card from "@/interfaces/card";
 
 const AcidicSwampOoze: Card = {
   class: "neutral",
@@ -10,9 +10,6 @@ const AcidicSwampOoze: Card = {
   text: "<b>Battlecry:</b> Destroy your opponent's weapon.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...AcidicSwampOoze };
-  },
-}
+};
 
-export default AcidicSwampOoze
+export default AcidicSwampOoze;

@@ -10,9 +10,6 @@ const EarthenRingFarseer: Card = {
   text: "<b>Battlecry:</b> Restore 3 Health.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...EarthenRingFarseer };
-  },
 }
 
 export default EarthenRingFarseer

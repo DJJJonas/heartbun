@@ -10,9 +10,6 @@ const NoviceEngineer: Card = {
   text: "<b>Battlecry:</b> Draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...NoviceEngineer };
-  },
 }
 
 export default NoviceEngineer

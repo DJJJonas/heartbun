@@ -10,9 +10,6 @@ const DalaranMage: Card = {
   text: "<b>Spell Damage +1</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DalaranMage };
-  },
 }
 
 export default DalaranMage

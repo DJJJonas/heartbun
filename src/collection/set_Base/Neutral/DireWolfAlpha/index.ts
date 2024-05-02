@@ -10,9 +10,6 @@ const DireWolfAlpha: Card = {
   text: "Adjacent minions have +1 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...DireWolfAlpha };
-  },
 }
 
 export default DireWolfAlpha

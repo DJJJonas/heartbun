@@ -10,9 +10,6 @@ const BloodfenRaptor: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BloodfenRaptor };
-  },
 }
 
 export default BloodfenRaptor

@@ -10,9 +10,6 @@ const KoboldGeomancer: Card = {
   text: "<b>Spell Damage +1</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...KoboldGeomancer };
-  },
 }
 
 export default KoboldGeomancer

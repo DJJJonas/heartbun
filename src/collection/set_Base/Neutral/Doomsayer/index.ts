@@ -10,9 +10,6 @@ const Doomsayer: Card = {
   text: "At the start of your turn, destroy ALL minions.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Doomsayer };
-  },
 }
 
 export default Doomsayer

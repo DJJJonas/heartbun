@@ -10,9 +10,6 @@ const TheBlackKnight: Card = {
   text: "<b>Battlecry:</b> Destroy an enemy minion with <b>Taunt</b>.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...TheBlackKnight };
-  },
 }
 
 export default TheBlackKnight

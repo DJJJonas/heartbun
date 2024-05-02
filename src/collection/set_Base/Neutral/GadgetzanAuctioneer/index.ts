@@ -10,9 +10,6 @@ const GadgetzanAuctioneer: Card = {
   text: "Whenever you cast a spell, draw a card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...GadgetzanAuctioneer };
-  },
 }
 
 export default GadgetzanAuctioneer

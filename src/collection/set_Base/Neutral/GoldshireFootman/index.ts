@@ -10,9 +10,6 @@ const GoldshireFootman: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...GoldshireFootman };
-  },
 }
 
 export default GoldshireFootman

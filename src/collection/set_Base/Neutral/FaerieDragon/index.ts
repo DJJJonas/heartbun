@@ -10,9 +10,6 @@ const FaerieDragon: Card = {
   text: "<b>Elusive</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...FaerieDragon };
-  },
 }
 
 export default FaerieDragon

@@ -10,9 +10,6 @@ const NatPagle: Card = {
   text: "At the start of your turn, you have a 50% chance to draw an extra card.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...NatPagle };
-  },
 }
 
 export default NatPagle

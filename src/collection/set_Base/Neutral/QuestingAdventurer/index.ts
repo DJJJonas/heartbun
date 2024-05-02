@@ -10,9 +10,6 @@ const QuestingAdventurer: Card = {
   text: "Whenever you play a card, gain +1/+1.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...QuestingAdventurer };
-  },
 }
 
 export default QuestingAdventurer

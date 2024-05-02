@@ -10,9 +10,6 @@ const RaidLeader: Card = {
   text: "Your other minions have +1 Attack.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...RaidLeader };
-  },
 }
 
 export default RaidLeader

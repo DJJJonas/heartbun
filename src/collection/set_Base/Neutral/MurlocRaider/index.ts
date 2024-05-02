@@ -10,9 +10,6 @@ const MurlocRaider: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MurlocRaider };
-  },
 }
 
 export default MurlocRaider

@@ -10,9 +10,6 @@ const EmperorCobra: Card = {
   text: "Destroy any minion damaged by this minion.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...EmperorCobra };
-  },
 }
 
 export default EmperorCobra

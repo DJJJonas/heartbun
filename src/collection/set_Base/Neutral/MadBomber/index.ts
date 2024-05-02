@@ -10,9 +10,6 @@ const MadBomber: Card = {
   text: "<b>Battlecry:</b> Deal 3 damage randomly split between all other characters.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...MadBomber };
-  },
 }
 
 export default MadBomber

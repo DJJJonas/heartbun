@@ -10,9 +10,6 @@ const ThrallmarFarseer: Card = {
   text: "<b>Windfury</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ThrallmarFarseer };
-  },
 }
 
 export default ThrallmarFarseer

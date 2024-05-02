@@ -10,9 +10,6 @@ const FrostElemental: Card = {
   text: "<b>Battlecry:</b> <b>Freeze</b> a character.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...FrostElemental };
-  },
 }
 
 export default FrostElemental

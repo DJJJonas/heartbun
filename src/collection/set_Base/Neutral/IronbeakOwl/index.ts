@@ -10,9 +10,6 @@ const IronbeakOwl: Card = {
   text: "<b>Battlecry:</b> <b>Silence</b> a minion.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...IronbeakOwl };
-  },
 }
 
 export default IronbeakOwl

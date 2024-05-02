@@ -10,9 +10,6 @@ const StormwindChampion: Card = {
   text: "Your other minions have +1/+1.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...StormwindChampion };
-  },
 }
 
 export default StormwindChampion

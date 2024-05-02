@@ -10,9 +10,6 @@ const ShatteredSunCleric: Card = {
   text: "<b>Battlecry:</b> Give a friendly minion +1/+1.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...ShatteredSunCleric };
-  },
 }
 
 export default ShatteredSunCleric

@@ -10,9 +10,6 @@ const InjuredBlademaster: Card = {
   text: "<b>Battlecry:</b> Deal 4 damage to HIMSELF.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...InjuredBlademaster };
-  },
 }
 
 export default InjuredBlademaster

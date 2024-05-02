@@ -10,9 +10,6 @@ const Archmage: Card = {
   text: "<b>Spell Damage +1</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Archmage };
-  },
 }
 
 export default Archmage

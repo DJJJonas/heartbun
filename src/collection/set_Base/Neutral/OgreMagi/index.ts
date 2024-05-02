@@ -10,9 +10,6 @@ const OgreMagi: Card = {
   text: "<b>Spell Damage +1</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...OgreMagi };
-  },
 }
 
 export default OgreMagi

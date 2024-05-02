@@ -10,9 +10,6 @@ const FrostwolfGrunt: Card = {
   text: "<b>Taunt</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...FrostwolfGrunt };
-  },
 }
 
 export default FrostwolfGrunt

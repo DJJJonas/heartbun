@@ -10,9 +10,6 @@ const SylvanasWindrunner: Card = {
   text: "<b>Deathrattle:</b> Take control of a random enemy minion.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...SylvanasWindrunner };
-  },
 }
 
 export default SylvanasWindrunner

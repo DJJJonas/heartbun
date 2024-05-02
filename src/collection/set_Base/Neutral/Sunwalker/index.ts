@@ -10,9 +10,6 @@ const Sunwalker: Card = {
   text: "<b>Taunt</b> <b>Divine Shield</b>",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...Sunwalker };
-  },
 }
 
 export default Sunwalker

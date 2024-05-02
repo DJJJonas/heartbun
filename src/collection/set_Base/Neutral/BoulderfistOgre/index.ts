@@ -10,9 +10,6 @@ const BoulderfistOgre: Card = {
   text: "",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...BoulderfistOgre };
-  },
 }
 
 export default BoulderfistOgre

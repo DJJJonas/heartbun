@@ -10,9 +10,6 @@ const LeeroyJenkins: Card = {
   text: "<b>Charge</b>. <b>Battlecry:</b> Summon two 1/1 Whelps for your opponent.",
   type: "minion",
   portrait: "",
-  copy: () => {
-    return { ...LeeroyJenkins };
-  },
 }
 
 export default LeeroyJenkins
