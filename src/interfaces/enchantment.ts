@@ -1,7 +1,8 @@
 import type { EngineEvent, MinionTrybe } from "@/types";
 
 export default interface Enchantment {
-  id: number;
+  id?: number; // set during gameplay
+  name?: string;
   cost?: number;
   attack?: number;
   maxHealth?: number;
