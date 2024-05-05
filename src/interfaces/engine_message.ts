@@ -1,3 +1,4 @@
+import type { EngineMessageAction } from "@/types";
 import type Card from "./card";
 
 /**
@@ -13,7 +14,7 @@ import type Card from "./card";
  * associated cards with the title
  */
 export interface EngineMessage {
-  type: "request" | "response";
-  action: "mulligan" | "free";
-  cards: Array<Card>;
+  action: EngineMessageAction;
+  type?: "request" | "response";
+  cards?: Array<Card>;
 }
