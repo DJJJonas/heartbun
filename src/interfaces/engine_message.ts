@@ -17,4 +17,5 @@ export interface EngineMessage {
   action: EngineMessageAction;
   type?: "request" | "response";
   cards?: Array<Card>;
+  ids?: Array<string>;
 }
