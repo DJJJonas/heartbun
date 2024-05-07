@@ -28,9 +28,7 @@ export default class Engine {
   }
 
   start() {
-    /** Shuffle decks and return mulligan options */
-    const p1mul: Array<Card> = [];
-    const p2mul: Array<Card> = [];
+    /** Shuffle decks and send mulligan request */
 
     const [p1, p2] = this.players;
     shuffle(p1.deck);
@@ -39,34 +37,28 @@ export default class Engine {
     for (let i = 0; i < 3; i++) {
       const card = drawCard(p1.deck);
       if (!card) break;
-      p1mul.push(card);
+      p1.hand.push(card);
     }
 
     for (let i = 0; i < 4; i++) {
       const card = drawCard(p2.deck);
       if (!card) break;
-      p2mul.push(card);
+      p2.hand.push(card);
     }
-
-    //p1.hand = p1mul;
-    //p2.hand = p2mul;
 
     this.player1Messages.push({
       type: "request",
       action: "mulligan",
-      cards: p1mul,
     });
 
     this.player2Messages.push({
       type: "request",
       action: "mulligan",
-      cards: p1mul,
     });
-    // TODO maybe eventless putting mulligan options in hand is better than returning an array of them
-    return [p1mul, p2mul];
   }
 
   send(msg: EngineMessage) {
+    // TODO: action: "endturn"
     // TODO: action: "play" -> play card from hand
     // TODO: action: "mulligan" -> put choosen card id's on deck and redraw
     // TODO: action: "attack" -> make attack id0 attack id1
