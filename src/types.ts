@@ -37,4 +37,9 @@ export type EngineEvent = (c: EventContext, e: EventManager) => void;
 
 export type EngineEventName = "battlecry" | "startOfGame";
 
-export type EngineMessageAction = "mulligan" | "free" | "play" | "attack";
+export type EngineMessageAction =
+  | "mulligan"
+  | "free"
+  | "play"
+  | "attack"
+  | "endturn";
