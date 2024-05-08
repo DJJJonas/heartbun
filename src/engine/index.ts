@@ -15,6 +15,8 @@ export default class Engine {
   player1Messages: Array<EngineMessage> = [];
   player2Messages: Array<EngineMessage> = [];
 
+  isPlayerReady: Array<boolean> = [false, false];
+
   get turnPlayer() {
     return this.players[this.turnPlayerIndex];
   }
@@ -60,17 +62,23 @@ export default class Engine {
   send(msg: EngineMessage) {
     // TODO: action: "endturn"
     // TODO: action: "play" -> play card from hand
-    // TODO: action: "mulligan" -> put choosen card id's on deck and redraw
     // TODO: action: "attack" -> make attack id0 attack id1
-    if (!msg.player) throw new Error("undefined player");
-
+    if (!msg) throw new Error("undefined message");
+    if (msg.player === undefined) throw new Error("undefined player");
     const player = this.players[msg.player];
+    const playerIsNotReady = !this.isPlayerReady[msg.player];
+    const playersAreNotReady = !this.isPlayerReady.some((ready) => ready);
+
+    if (playerIsNotReady && msg.action === "mulligan") {
+      if (typeof msg.ids !== "object" || msg.ids === null)
+        throw new Error("undefined ids");
+      this.mulligan(player, msg.ids);
+      this.isPlayerReady[msg.player] = true;
+    } else if (playersAreNotReady) {
+      throw new Error("players needs to mulligan first");
+    }
+
     switch (msg.action) {
-      // TODO: create "mulligan" engine state where the game can only start if both players confirm mulligan
-      case "mulligan":
-        if (typeof msg.ids !== "object") throw new Error("undefined ids");
-        this.mulligan(player, msg.ids);
-        break;
       // case "free":
       // case "play":
       // case "attack":
