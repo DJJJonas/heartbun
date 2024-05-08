@@ -30,12 +30,12 @@ test("mock", () => {
   game.send({
     action: "mulligan",
     ids: p1hand.map((card) => card.id!),
-    // player: 0, // TODO
+    player: 0,
   });
   game.send({
     action: "mulligan",
     ids: p2hand.map((card) => card.id!),
-    // player: 1, // TODO
+    player: 1,
   });
   expect(p1hand).toBeArrayOfSize(3);
   expect(p2hand).toBeArrayOfSize(4);
@@ -61,7 +61,9 @@ test("mock", () => {
     cards: [],
   });
   // Player 1 end turn
-  // game.endTurn(); // TODO send "endturn" message
+  game.send({
+    action: "endturn",
+  });
   expect(game.turnPlayerIndex).toBe(1); // Second player's turn
   // Now player two will play a card
   // game.playCard(p2hand[0].id!);
