@@ -62,7 +62,23 @@ export default class Engine {
     // TODO: action: "play" -> play card from hand
     // TODO: action: "mulligan" -> put choosen card id's on deck and redraw
     // TODO: action: "attack" -> make attack id0 attack id1
-    throw new Error("TODO");
+    if (!msg.player) throw new Error("undefined player");
+
+    const player = this.players[msg.player];
+    switch (msg.action) {
+      // TODO: create "mulligan" engine state where the game can only start if both players confirm mulligan
+      case "mulligan":
+        if (typeof msg.ids !== "object") throw new Error("undefined ids");
+        this.mulligan(player, msg.ids);
+        break;
+      // case "free":
+      // case "play":
+      // case "attack":
+      // case "endturn":
+      default:
+        throw new Error("TODO");
+      //
+    }
   }
 
   private mulligan(player: Player, ids: number[]) {
@@ -70,6 +86,7 @@ export default class Engine {
       const card = removeCard(player.hand, id)!;
       shuffleCard(player.deck, card);
     });
+    this.eventManager.triggerEventOn("mulligan", this.eventManager.allCards);
   }
 
   private forceWinner(player: number) {
