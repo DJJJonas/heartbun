@@ -9,7 +9,7 @@ import type Player from "@/interfaces/player";
 export default class EventManager {
   get allCards() {
     return this.engine.players
-      .map((p) => [...p.hand, ...p.deck, ...p.minions, p.hero])
+      .map((p) => [...p.hand, ...p.deck, ...p.minions]) // TODO: add p.hero after impl heroes
       .flat();
   }
 
