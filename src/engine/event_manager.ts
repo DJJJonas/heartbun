@@ -7,7 +7,7 @@ import type Player from "@/interfaces/player";
  * Responsible for propagating events and dispatching events
  */
 export default class EventManager {
-  private get allCards() {
+  get allCards() {
     return this.engine.players
       .map((p) => [...p.hand, ...p.deck, ...p.minions, p.hero])
       .flat();
