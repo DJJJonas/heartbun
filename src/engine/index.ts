@@ -95,6 +95,11 @@ export default class Engine {
       const card = removeCard(player.hand, id)!;
       shuffleCard(player.deck, card);
     });
+    for (const _ of ids) {
+      const card = drawCard(player.deck);
+      if (!card) break;
+      player.hand.push(card);
+    }
     this.eventManager.triggerEventOn("mulligan", this.eventManager.allCards);
   }
 
