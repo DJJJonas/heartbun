@@ -74,6 +74,7 @@ export default class Engine {
         throw new Error("undefined ids");
       this.mulligan(player, msg.ids);
       this.isPlayerReady[msg.player] = true;
+      return;
     } else if (playersAreNotReady) {
       throw new Error("players needs to mulligan first");
     }
