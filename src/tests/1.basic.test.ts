@@ -19,9 +19,6 @@ test("mock", () => {
 
   const p1 = game.players[0];
   const p2 = game.players[1];
-  // Players hands
-  const p1hand: Array<Card> = p1.hand;
-  const p2hand: Array<Card> = p2.hand;
   // TODO
   // `mulligan` will receive the id of the cards the player
   // want to switch
@@ -29,16 +26,16 @@ test("mock", () => {
   // will switch their whole hand
   game.send({
     action: "mulligan",
-    ids: p1hand.map((card) => card.id!),
+    ids: p1.hand.map((card) => card.id!),
     player: 0,
   });
   game.send({
     action: "mulligan",
-    ids: p2hand.map((card) => card.id!),
+    ids: p2.hand.map((card) => card.id!),
     player: 1,
   });
-  expect(p1hand).toBeArrayOfSize(3);
-  expect(p2hand).toBeArrayOfSize(4);
+  expect(p1.hand).toBeArrayOfSize(3);
+  expect(p2.hand).toBeArrayOfSize(4);
   expect(game.turnPlayerIndex).toBe(0); // First player's turn
   // Player one check
   expect(p1.health).toBe(30);
