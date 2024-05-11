@@ -31,6 +31,9 @@ export default class EventManager {
 
   endTurn() {
     this.engine.turn++;
+    this.triggerEventOn("endOfTurn", this.allCards);
+    this.engine.turnPlayerIndex = Number(!this.engine.turnPlayerIndex);
+    // TODO gain mana crystal event
   }
 
   triggerEventOn(eventName: EngineEventName, cards: Array<Card>) {
