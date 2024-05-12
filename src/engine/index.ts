@@ -96,7 +96,7 @@ export default class Engine {
   private mulligan(player: Player, ids: number[]) {
     ids.forEach((id) => {
       const card = removeCard(player.hand, id)!;
-      shuffleCard(player.deck, card);
+      shuffleCard(card, player.deck);
     });
     for (const _ of ids) {
       const card = drawCard(player.deck);

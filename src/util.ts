@@ -29,7 +29,7 @@ export function drawCard(cards: Array<Card>): Card | undefined {
 }
 
 /** Insert card into array and shuffles it. */
-export function shuffleCard(cards: Array<Card>, card: Card) {
+export function shuffleCard(card: Card, cards: Array<Card>) {
   cards.push(card);
   shuffle(cards);
 }
