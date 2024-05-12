@@ -103,7 +103,6 @@ export default class Engine {
       if (!card) break;
       player.hand.push(card);
     }
-    this.eventManager.triggerEventOn("mulligan", this.eventManager.allCards);
   }
 
   private forceWinner(player: number) {
