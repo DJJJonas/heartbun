@@ -14,8 +14,9 @@ export default class Engine {
   eventManager = new EventManager(this);
   player1Messages: Array<EngineMessage> = [];
   player2Messages: Array<EngineMessage> = [];
+  messageHandler: (msg: EngineMessage) => void = this.mulliganMessageHandler;
 
-  isPlayerReady: Array<boolean> = [false, false];
+  playerMulligated: Array<boolean> = [false, false];
 
   get turnPlayer() {
     return this.players[this.turnPlayerIndex];
@@ -60,27 +61,40 @@ export default class Engine {
   }
 
   send(msg: EngineMessage) {
+    if (!msg) throw new Error("undefined message");
+    if (msg.player === undefined) throw new Error("undefined player");
+    this.messageHandler(msg);
+  }
+
+  /**
+   * # Mulligan Handler
+   * ## Case scenarios
+   * _\*player sends the ids of cards to mulligate\*_
+   *  - Player mulligated -> ignore
+   *  - Player didn't mulligated -> Player now ready
+   *    - If both players are ready -> Message Handler goes to `normalMessageHandler`
+   */
+  private mulliganMessageHandler(msg: EngineMessage) {
+    const pIndex = msg.player!;
+    const playerMulligated = this.playerMulligated[pIndex];
+    const playersMulligated = () =>
+      !this.playerMulligated.some((r) => r === false);
+    const setPlayerMulligated = (r: boolean) =>
+      (this.playerMulligated[pIndex] = r);
+
+    if (playerMulligated) return;
+    else {
+      setPlayerMulligated(true);
+      if (playersMulligated()) {
+        this.messageHandler = this.normalMessageHandler; // 👀 if this causes errors: try `.bind(this)`
+      }
+    }
+  }
+
+  private normalMessageHandler(msg: EngineMessage) {
     // TODO: action: "endturn"
     // TODO: action: "play" -> play card from hand
     // TODO: action: "attack" -> make attack id0 attack id1
-    if (!msg) throw new Error("undefined message");
-    if (msg.player === undefined) throw new Error("undefined player");
-    const player = this.players[msg.player];
-    const playerIsNotReady = !this.isPlayerReady[msg.player];
-    const playersAreNotReady = !this.isPlayerReady.some((ready) => ready);
-
-    if (playerIsNotReady && msg.action === "mulligan") {
-      if (typeof msg.ids !== "object" || msg.ids === null)
-        throw new Error("undefined ids");
-      this.mulligan(player, msg.ids);
-      this.isPlayerReady[msg.player] = true;
-      if (playersAreNotReady) return;
-      else {
-        this.eventManager.endTurn();
-      }
-    } else if (playersAreNotReady) {
-      throw new Error("players needs to mulligan first");
-    }
 
     switch (msg.action) {
       // case "free":
@@ -93,7 +107,7 @@ export default class Engine {
     }
   }
 
-  private mulligan(player: Player, ids: number[]) {
+  private mulligate(player: Player, ids: number[]) {
     ids.forEach((id) => {
       const card = removeCard(player.hand, id)!;
       shuffleCard(card, player.deck);
