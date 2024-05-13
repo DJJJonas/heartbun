@@ -87,6 +87,8 @@ export default class Engine {
       setPlayerMulligated(true);
       if (playersMulligated()) {
         this.messageHandler = this.normalMessageHandler; // 👀 if this causes errors: try `.bind(this)`
+        this.eventManager.addMaxMana(this.turnPlayer);
+        this.eventManager.refreshMana(this.turnPlayer);
       }
     }
   }

@@ -37,11 +37,15 @@ export default class EventManager {
   }
 
   endTurn() {
+    const player = this.engine.turnPlayer;
     this.engine.turn++;
-    const source = this.engine.turnPlayer.hero;
-    this.trigger("endOfTurn", { source });
+    const source = player.hero;
     this.engine.turnPlayerIndex = Number(!this.engine.turnPlayerIndex);
-    // TODO gain mana crystal event
+    this.trigger("endOfTurn", { source });
+
+    this.addMaxMana(player);
+    this.refreshMana(player);
+    this.trigger("manaGain", { source });
   }
 
   trigger(eventName: EngineEventName, context: EventContext) {
@@ -52,5 +56,15 @@ export default class EventManager {
         evs?.forEach((ev) => ev(context, this));
       });
     });
+  }
+
+  addMaxMana(player: Player) {
+    if (player.maxMana <= player.maxManaLimit) {
+      player.maxMana++;
+    }
+  }
+
+  refreshMana(player: Player) {
+    player.mana = player.maxMana;
   }
 }
