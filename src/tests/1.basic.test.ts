@@ -19,7 +19,6 @@ test("mock", () => {
 
   const p1 = game.players[0];
   const p2 = game.players[1];
-  // TODO
   // `mulligan` will receive the id of the cards the player
   // want to switch
   // In the following case, both players
@@ -46,16 +45,17 @@ test("mock", () => {
   // Player two check
   expect(p2.health).toBe(30);
   expect(p2.armor).toBe(0);
-  expect(p2.mana).toBe(1);
-  expect(p2.maxMana).toBe(1);
+  expect(p2.mana).toBe(0);
+  expect(p2.maxMana).toBe(0);
   expect(p2.maxManaLimit).toBe(10);
   // PlayCard will receive the id of the card
   // and by default the player of the current
   // turn will be the one who played
   //// game.playCard(p1hand[0].id!);
+  // TODO implement 👇
   game.send({
     action: "play",
-    cards: [],
+    ids: [p1.hand[0].id!],
   });
   // Player 1 end turn
   game.send({
