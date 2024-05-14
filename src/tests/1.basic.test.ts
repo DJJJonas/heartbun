@@ -1,6 +1,5 @@
 import { test, expect } from "bun:test";
 import Collection from "@/collection/set_Base/Neutral";
-import type Card from "@/interfaces/card";
 import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
 import type Deck from "@/interfaces/deck";
@@ -51,15 +50,17 @@ test("mock", () => {
   // PlayCard will receive the id of the card
   // and by default the player of the current
   // turn will be the one who played
-  //// game.playCard(p1hand[0].id!);
-  // TODO implement 👇
   game.send({
     action: "play",
+    player: 0,
     ids: [p1.hand[0].id!],
   });
+  expect(p1.minions.length).toBe(1);
+  expect(p1.minions[0].name).toBe(ArgentSquire.name);
   // Player 1 end turn
   game.send({
     action: "endturn",
+    player: 0,
   });
   expect(game.turnPlayerIndex).toBe(1); // Second player's turn
   // Now player two will play a card
@@ -77,7 +78,6 @@ function sampleDeck(): Deck {
   // @ts-expect-error
   let deck: Deck = { cards: [] };
   // Fill deck with 30 1/1's
-  for (let i = 0; i < 30; i++)
-    deck.cards.push(Object.assign({ ...ArgentSquire }));
+  for (let i = 0; i < 30; i++) deck.cards.push({ ...ArgentSquire });
   return deck;
 }
