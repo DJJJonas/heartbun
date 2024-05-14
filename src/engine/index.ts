@@ -95,8 +95,6 @@ export default class Engine {
 
   private normalMessageHandler(msg: EngineMessage) {
     if (this.turnPlayerIndex !== msg.player) return;
-    // TODO: action: "endturn"
-    // TODO: action: "play" -> play card from hand
     // TODO: action: "attack" -> make attack id0 attack id1
 
     switch (msg.action) {
@@ -106,7 +104,9 @@ export default class Engine {
         this.eventManager.play(this.turnPlayer, msg.ids[0]);
         break;
       // case "attack":
-      // case "endturn":
+      case "endturn":
+        this.eventManager.endTurn();
+        break;
       default:
         throw new Error("TODO");
       //
