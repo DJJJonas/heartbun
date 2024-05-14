@@ -23,14 +23,14 @@ test("mock", () => {
   // In the following case, both players
   // will switch their whole hand
   game.send({
+    player: 0,
     action: "mulligan",
     ids: p1.hand.map((card) => card.id!),
-    player: 0,
   });
   game.send({
+    player: 1,
     action: "mulligan",
     ids: p2.hand.map((card) => card.id!),
-    player: 1,
   });
   expect(p1.hand).toBeArrayOfSize(3);
   expect(p2.hand).toBeArrayOfSize(4);
@@ -51,20 +51,29 @@ test("mock", () => {
   // and by default the player of the current
   // turn will be the one who played
   game.send({
-    action: "play",
     player: 0,
+    action: "play",
     ids: [p1.hand[0].id!],
   });
   expect(p1.minions.length).toBe(1);
   expect(p1.minions[0].name).toBe(ArgentSquire.name);
   // Player 1 end turn
   game.send({
-    action: "endturn",
     player: 0,
+    action: "endturn",
   });
   expect(game.turnPlayerIndex).toBe(1); // Second player's turn
-  // Now player two will play a card
-  // game.playCard(p2hand[0].id!);
+  // Player 2 skip turn
+  game.send({
+    player: 1,
+    action: "endturn",
+  });
+  expect(game.turnPlayerIndex).toBe(0); // First player's turn
+  game.send({
+    player: 0,
+    action: "attack",
+    ids: [p1.minions[0].id!, p2.hero.id!],
+  });
   // End game and set player one to winner
   // game.forceWinner(0);
 });
