@@ -25,7 +25,7 @@ export default class Engine {
   constructor(deck1: Deck, deck2: Deck) {
     this.players = [newPlayer(deck1), newPlayer(deck2)];
     this.players.forEach((p) => {
-      // this.setCardDefaults(p.hero); //! TEMPORARY WHILE HEROS ARE NOT IMPLEMENTED
+      this.setCardDefaults(p.hero);
       p.deck.forEach((c) => this.setCardDefaults(c));
     });
   }
