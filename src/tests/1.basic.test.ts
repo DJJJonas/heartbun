@@ -1,8 +1,9 @@
-import { test, expect } from "bun:test";
+import Anduin from "@/collection/heros/Priest";
 import Collection from "@/collection/set_Base/Neutral";
 import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
 import type Deck from "@/interfaces/deck";
+import { expect, test } from "bun:test";
 
 // Mock
 test("mock", () => {
@@ -36,13 +37,13 @@ test("mock", () => {
   expect(p2.hand).toBeArrayOfSize(4);
   expect(game.turnPlayerIndex).toBe(0); // First player's turn
   // Player one check
-  expect(p1.health).toBe(30);
+  expect(p1.hero.health).toBe(30);
   expect(p1.armor).toBe(0);
   expect(p1.mana).toBe(1);
   expect(p1.maxMana).toBe(1);
   expect(p1.maxManaLimit).toBe(10);
   // Player two check
-  expect(p2.health).toBe(30);
+  expect(p2.hero.health).toBe(30);
   expect(p2.armor).toBe(0);
   expect(p2.mana).toBe(0);
   expect(p2.maxMana).toBe(0);
@@ -88,5 +89,6 @@ function sampleDeck(): Deck {
   let deck: Deck = { cards: [] };
   // Fill deck with 30 1/1's
   for (let i = 0; i < 30; i++) deck.cards.push({ ...ArgentSquire });
+  deck.hero = { ...Anduin };
   return deck;
 }
