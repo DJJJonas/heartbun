@@ -3,6 +3,7 @@ import type Engine from ".";
 import type Card from "@/interfaces/card";
 import type Player from "@/interfaces/player";
 import type { EventContext } from "@/interfaces/event_context";
+import { removeCardId } from "@/util";
 
 /**
  * Responsible for propagating events and dispatching events
@@ -66,5 +67,19 @@ export default class EventManager {
 
   refreshMana(player: Player) {
     player.mana = player.maxMana;
+  }
+
+  attack(sourceId: number, targetId: number) {
+    const player = this.engine.turnPlayer;
+    const opponent = this.engine.opponentPlayer;
+    const source = removeCardId([...player.minions, player.hero], sourceId);
+    const target = removeCardId([...opponent.minions, opponent.hero], targetId);
+    if (!source || !target) return;
+    source.health! -= target.attack!;
+    target.health! -= source.attack!;
+    // TODO beforeAttack
+    const damageDealt = source.attack;
+    this.trigger("attack", { source: source, damageDealt });
+    // TODO "attacked" && "beforeAttacked" event ?
   }
 }

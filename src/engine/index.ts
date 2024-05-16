@@ -2,7 +2,7 @@ import type Card from "@/interfaces/card";
 import type Deck from "@/interfaces/deck";
 import type { EngineMessage } from "@/interfaces/engine_message";
 import type Player from "@/interfaces/player";
-import { drawCard, removeCard, shuffle, shuffleCard } from "@/util";
+import { drawCard, removeCardId, shuffle, shuffleCard } from "@/util";
 import EventManager from "./event_manager";
 import { newPlayer } from "./util";
 
@@ -20,6 +20,10 @@ export default class Engine {
 
   get turnPlayer() {
     return this.players[this.turnPlayerIndex];
+  }
+
+  get opponentPlayer() {
+    return this.players[Math.abs(this.turnPlayerIndex - 1)];
   }
 
   constructor(deck1: Deck, deck2: Deck) {
@@ -95,7 +99,8 @@ export default class Engine {
 
   private normalMessageHandler(msg: EngineMessage) {
     if (this.turnPlayerIndex !== msg.player) return;
-    // TODO: action: "attack" -> make attack id0 attack id1
+    const player = this.turnPlayer;
+    const opponent = this.opponentPlayer;
 
     switch (msg.action) {
       // case "free":
@@ -103,10 +108,18 @@ export default class Engine {
         if (!msg.ids?.length || !msg.ids[0]) return;
         this.eventManager.play(this.turnPlayer, msg.ids[0]);
         break;
-      // case "attack":
+
+      case "attack":
+        if (msg.ids === undefined || msg.ids.length !== 2) return;
+        if (msg.ids[0] && msg.ids[1])
+          this.eventManager.attack(msg.ids[0], msg.ids[1]);
+        else return;
+        break;
+
       case "endturn":
         this.eventManager.endTurn();
         break;
+
       default:
         throw new Error("TODO");
       //
@@ -115,7 +128,7 @@ export default class Engine {
 
   private mulligate(player: Player, ids: number[]) {
     ids.forEach((id) => {
-      const card = removeCard(player.hand, id)!;
+      const card = removeCardId(player.hand, id)!;
       shuffleCard(card, player.deck);
     });
     for (const _ of ids) {
