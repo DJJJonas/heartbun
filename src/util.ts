@@ -38,7 +38,7 @@ export function shuffleCard(card: Card, cards: Array<Card>) {
  * Removes and return the card with the specified `id`.
  * If the card is not found, undefined is returned and the array is not modified.
  */
-export function removeCard(cards: Array<Card>, id: number): Card | undefined {
+export function removeCardId(cards: Array<Card>, id: number): Card | undefined {
   const index = cards.findIndex((card) => card.id === id);
   if (index < 0) return undefined;
   return cards.splice(index, 1)[0];
