@@ -16,7 +16,7 @@ export function shuffle(arr: Array<any>): void {
 
 /** Python-like range function that returns an array from `0` to `count - 1`. */
 export function range(count: number): Array<number> {
-  return Array.from(Array(5), (_, i) => i);
+  return Array.from(Array(count), (_, i) => i);
 }
 
 /**
