@@ -12,8 +12,6 @@ export default class Engine {
   turn = 0;
   globalID = 0;
   eventManager = new EventManager(this);
-  player1Messages: Array<EngineMessage> = [];
-  player2Messages: Array<EngineMessage> = [];
   messageHandler: (msg: EngineMessage) => void = this.mulliganMessageHandler;
 
   playerMulligated: Array<boolean> = [false, false];
@@ -53,12 +51,12 @@ export default class Engine {
       p2.hand.push(card);
     }
 
-    this.player1Messages.push({
+    p1.messageChannel({
       type: "request",
       action: "mulligan",
     });
 
-    this.player2Messages.push({
+    p2.messageChannel({
       type: "request",
       action: "mulligan",
     });

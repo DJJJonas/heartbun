@@ -1,4 +1,5 @@
 import type Card from "./card";
+import type { EngineMessage } from "./engine_message";
 
 export default interface Player {
   deck: Array<Card>;
@@ -9,4 +10,6 @@ export default interface Player {
   maxMana: number;
   maxManaLimit: number;
   minions: Array<Card>;
+
+  messageChannel: (msg: EngineMessage) => void;
 }
