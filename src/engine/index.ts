@@ -78,6 +78,7 @@ export default class Engine {
    */
   private mulliganMessageHandler(msg: EngineMessage) {
     const pIndex = msg.player!;
+    const player = this.players[pIndex];
     const playerMulligated = this.playerMulligated[pIndex];
     const playersMulligated = () =>
       !this.playerMulligated.some((r) => r === false);
@@ -86,6 +87,8 @@ export default class Engine {
 
     if (playerMulligated) return;
     else {
+      if (!msg.ids) return;
+      this.mulligate(player, msg.ids);
       setPlayerMulligated(true);
       if (playersMulligated()) {
         this.messageHandler = this.normalMessageHandler; // 👀 if this causes errors: try `.bind(this)`
