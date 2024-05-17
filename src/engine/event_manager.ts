@@ -1,9 +1,8 @@
-import type { EngineEventName } from "@/types";
-import type Engine from ".";
-import type Card from "@/interfaces/card";
-import type Player from "@/interfaces/player";
 import type { EventContext } from "@/interfaces/event_context";
+import type Player from "@/interfaces/player";
+import type { EngineEventName } from "@/types";
 import { removeCardId } from "@/util";
+import type Engine from ".";
 
 /**
  * Responsible for propagating events and dispatching events
