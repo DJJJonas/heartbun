@@ -3,6 +3,8 @@ import Collection from "@/collection/set_Base/Neutral";
 import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
 import type Deck from "@/interfaces/deck";
+import type { EngineMessage } from "@/interfaces/engine_message";
+import { range } from "@/util";
 import { expect, test } from "bun:test";
 
 // Mock
@@ -11,14 +13,15 @@ test("mock", () => {
   const player2deck = sampleDeck();
   // Decks will be shuffled.
   const game = new Engine(player1deck, player2deck);
+  let lastMsg: EngineMessage;
+  game.players.forEach((p) => {
+    p.messageChannel = (msg) => (lastMsg = msg);
+  });
   // Player 1 will receive 3 cards for mulligan
   // Player 2 will receive 4 cards for mulligan
   game.start();
-  const msg1 = game.player1Messages.pop();
-  const msg2 = game.player2Messages.pop();
 
-  const p1 = game.players[0];
-  const p2 = game.players[1];
+  const [p1, p2] = game.players;
   // `mulligan` will receive the id of the cards the player
   // want to switch
   // In the following case, both players
@@ -70,19 +73,27 @@ test("mock", () => {
     action: "endturn",
   });
   expect(game.turnPlayerIndex).toBe(0); // First player's turn
-  game.send({
-    player: 0,
-    action: "attack",
-    ids: [p1.minions[0].id!, p2.hero.id!],
+
+  const p1minion = p1.minions[0].id!;
+  const p2hero = p2.hero.id!;
+  range(30).forEach((_) => {
+    game.send({
+      player: 0,
+      action: "attack",
+      ids: [p1minion, p2hero],
+    });
+    game.send({
+      player: 0,
+      action: "endturn",
+    });
+    game.send({
+      player: 1,
+      action: "endturn",
+    });
   });
   // End game and set player one to winner
   // game.forceWinner(0);
 });
-
-function sample() {
-  const rng = Math.floor(Math.random() * Collection.length);
-  return Collection[rng];
-}
 
 function sampleDeck(): Deck {
   // @ts-expect-error
