@@ -68,6 +68,7 @@ export default class EventManager {
     player.mana = player.maxMana;
   }
 
+  // TODO replace function signature to `attack{ctx: EventContext}`, and rename EventContext to Context
   attack(sourceId: number, targetId: number) {
     const player = this.engine.turnPlayer;
     const opponent = this.engine.opponentPlayer;
@@ -81,4 +82,8 @@ export default class EventManager {
     this.trigger("attack", { source: source, damageDealt });
     // TODO "attacked" && "beforeAttacked" event ?
   }
+
+  // TODO these functions
+  dealDamage(ctx: EventContext) {}
+  destroy(ctx: EventContext) {}
 }
