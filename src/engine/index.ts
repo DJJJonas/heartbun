@@ -92,29 +92,38 @@ export default class Engine {
       setPlayerMulligated(true);
       if (playersMulligated()) {
         this.messageHandler = this.normalMessageHandler; // 👀 if this causes errors: try `.bind(this)`
-        this.eventManager.addMaxMana(this.turnPlayer);
-        this.eventManager.refreshMana(this.turnPlayer);
+        const player = this.turnPlayer;
+        const source = player.hero;
+        this.eventManager.addMaxMana({ player, source });
+        this.eventManager.refreshMana({ player, source });
       }
     }
   }
 
+  popCardFrom(player: Player, id?: number) {
+    if (id === undefined) return undefined;
+    return removeCardId(this.eventManager.allCardsFrom(player), id);
+  }
+
+  // TODO create a function for each case
   private normalMessageHandler(msg: EngineMessage) {
+    // TODO replace msg.ids by sourceID and targetID
     if (this.turnPlayerIndex !== msg.player) return;
     const player = this.turnPlayer;
     const opponent = this.opponentPlayer;
+    const source = this.popCardFrom(player, msg.ids?.[0]);
+    const target = this.popCardFrom(player, msg.ids?.[1]);
 
     switch (msg.action) {
       // case "free":
       case "play":
-        if (!msg.ids?.length || !msg.ids[0]) return;
-        this.eventManager.play(this.turnPlayer, msg.ids[0]);
+        if (!source) return;
+        this.eventManager.play({ player, source });
         break;
 
       case "attack":
-        if (msg.ids === undefined || msg.ids.length !== 2) return;
-        if (msg.ids[0] && msg.ids[1])
-          this.eventManager.attack(msg.ids[0], msg.ids[1]);
-        else return;
+        if (!source || !target) return;
+        this.eventManager.attack({ player, source, target });
         break;
 
       case "endturn":
