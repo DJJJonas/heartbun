@@ -41,7 +41,8 @@ export type EngineEventName =
   | "mulligan"
   | "endOfTurn"
   | "manaGain"
-  | "attack";
+  | "attack"
+  | "damage";
 
 export type EngineMessageAction =
   | "mulligan"
