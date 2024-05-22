@@ -5,7 +5,6 @@ export interface Context {
   source: Card;
   player: Player;
   target?: Card;
-  damageDealt?: number;
-  damageTaken?: number;
-  damageHealed?: number;
+  damage?: number;
+  heal?: number;
 }

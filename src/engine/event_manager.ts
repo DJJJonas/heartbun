@@ -74,22 +74,21 @@ export default class EventManager {
     player.mana = player.maxMana;
   }
 
-  // TODO rename EventContext to Context
   attack({ player, source, target }: Context) {
     if (!source || !target) return;
     source.health! -= target.attack!;
     target.health! -= source.attack!;
     // TODO beforeAttack
     const damageDealt = source.attack;
-    this.trigger("attack", { player, source, damageDealt });
+    this.trigger("attack", { player, source, damage: damageDealt });
     // TODO "attacked" && "beforeAttacked" event ?
   }
 
-  dealDamage({ player, source, target, damageDealt }: Context) {
+  dealDamage({ player, source, target, damage: damageDealt }: Context) {
     if (!source || !target?.health || !damageDealt)
       throw new Error("can't deal damage: missing params");
     target.health -= damageDealt;
-    this.trigger("damage", { player, source, target, damageDealt });
+    this.trigger("damage", { player, source, target, damage: damageDealt });
   }
 
   destroy(ctx: Context) {}
