@@ -5,6 +5,7 @@ import type Player from "@/interfaces/player";
 import { drawCard, removeCardId, shuffle, shuffleCard } from "@/util";
 import EventManager from "./event_manager";
 import { newPlayer } from "./util";
+import type { AttackContext } from "./interfaces";
 
 export default class Engine {
   players: Array<Player>;
@@ -100,7 +101,7 @@ export default class Engine {
     }
   }
 
-  popCardFrom(player: Player, id?: number) {
+  private popCardFrom(player: Player, id?: number) {
     if (id === undefined) return undefined;
     return removeCardId(this.eventManager.allCardsFrom(player), id);
   }
@@ -122,8 +123,9 @@ export default class Engine {
         break;
 
       case "attack":
-        if (!source || !target) return;
-        this.eventManager.attack({ player, source, target });
+        if (source && target) {
+          this.caseAttack(player, source, target);
+        }
         break;
 
       case "endturn":
@@ -134,6 +136,15 @@ export default class Engine {
         throw new Error("TODO");
       //
     }
+  }
+
+  private caseAttack(player: Player, source: Card, target: Card) {
+    function hasAttackAndHealth(card: Card) {
+      return card.attack !== undefined && card.health !== undefined;
+    }
+
+    if (hasAttackAndHealth(source) && hasAttackAndHealth(target))
+      this.eventManager.attack({ player, source, target } as AttackContext);
   }
 
   private mulligate(player: Player, ids: number[]) {

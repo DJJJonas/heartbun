@@ -1,7 +1,9 @@
+import type Card from "@/interfaces/card";
 import type { Context } from "@/interfaces/event_context";
 import type Player from "@/interfaces/player";
 import type { EngineEventName } from "@/types";
 import type Engine from ".";
+import type { AttackContext } from "./interfaces";
 
 /**
  * Responsible for propagating events and dispatching events
@@ -74,21 +76,20 @@ export default class EventManager {
     player.mana = player.maxMana;
   }
 
-  attack({ player, source, target }: Context) {
-    if (!source || !target) return;
-    source.health! -= target.attack!;
-    target.health! -= source.attack!;
+  attack({ player, source, target }: AttackContext) {
+    source.health -= target.attack;
+    target.health -= source.attack;
     // TODO beforeAttack
-    const damageDealt = source.attack;
-    this.trigger("attack", { player, source, damage: damageDealt });
+    const damage = source.attack;
+    this.dealDamage({ player, source, target, damage });
+    this.trigger("attack", { player, source, damage });
     // TODO "attacked" && "beforeAttacked" event ?
   }
 
-  dealDamage({ player, source, target, damage: damageDealt }: Context) {
-    if (!source || !target?.health || !damageDealt)
-      throw new Error("can't deal damage: missing params");
-    target.health -= damageDealt;
-    this.trigger("damage", { player, source, target, damage: damageDealt });
+  dealDamage({ player, source, target, damage }: Context) {
+    // TODO create conditions
+    target!.health! -= damage!;
+    this.trigger("damage", { player, source, target, damage });
   }
 
   destroy(ctx: Context) {}
