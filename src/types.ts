@@ -1,5 +1,5 @@
 import type EventManager from "./engine/event_manager";
-import type { EventContext } from "./interfaces/event_context";
+import type { Context } from "./interfaces/event_context";
 
 //? order: attack+health | attack-only | health-only | none
 export type CardType = "hero" | "minion" | "weapon" | "spell";
@@ -33,7 +33,7 @@ export type HeroClass =
   | "warlock"
   | "warrior";
 
-export type EngineEvent = (c: EventContext, e: EventManager) => void;
+export type EngineEvent = (c: Context, e: EventManager) => void;
 
 export type EngineEventName =
   | "battlecry"

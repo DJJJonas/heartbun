@@ -1,7 +1,7 @@
 import type Card from "./card";
 import type Player from "./player";
 
-export interface EventContext {
+export interface Context {
   source: Card;
   player: Player;
   target?: Card;

@@ -1,4 +1,4 @@
-import type { EventContext } from "@/interfaces/event_context";
+import type { Context } from "@/interfaces/event_context";
 import type Player from "@/interfaces/player";
 import type { EngineEventName } from "@/types";
 import type Engine from ".";
@@ -28,7 +28,7 @@ export default class EventManager {
   }
 
   // plays card from player's hand and returns if the action was completed
-  play({ player, source }: EventContext) {
+  play({ player, source }: Context) {
     const srcIndex = player.hand.findIndex((c) => c === source);
     if (srcIndex < 0) return false;
     // remove card from hand
@@ -53,7 +53,7 @@ export default class EventManager {
     this.trigger("manaGain", { player, source });
   }
 
-  trigger(eventName: EngineEventName, ctx: EventContext) {
+  trigger(eventName: EngineEventName, ctx: Context) {
     this.allCards.forEach((c) => {
       const enchants = [c.defaultEnchantments, c.enchantments].flat();
       enchants.forEach((enc) => {
@@ -63,19 +63,19 @@ export default class EventManager {
     });
   }
 
-  addMaxMana({ player }: EventContext) {
+  addMaxMana({ player }: Context) {
     if (!player) return;
     if (player.maxMana <= player.maxManaLimit) {
       player.maxMana++;
     }
   }
 
-  refreshMana({ player }: EventContext) {
+  refreshMana({ player }: Context) {
     player.mana = player.maxMana;
   }
 
   // TODO rename EventContext to Context
-  attack({ player, source, target }: EventContext) {
+  attack({ player, source, target }: Context) {
     if (!source || !target) return;
     source.health! -= target.attack!;
     target.health! -= source.attack!;
@@ -85,12 +85,12 @@ export default class EventManager {
     // TODO "attacked" && "beforeAttacked" event ?
   }
 
-  dealDamage({ player, source, target, damageDealt }: EventContext) {
+  dealDamage({ player, source, target, damageDealt }: Context) {
     if (!source || !target?.health || !damageDealt)
       throw new Error("can't deal damage: missing params");
     target.health -= damageDealt;
     this.trigger("damage", { player, source, target, damageDealt });
   }
 
-  destroy(ctx: EventContext) {}
+  destroy(ctx: Context) {}
 }
