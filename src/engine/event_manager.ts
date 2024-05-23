@@ -1,9 +1,8 @@
-import type Card from "@/interfaces/card";
 import type { Context } from "@/interfaces/event_context";
 import type Player from "@/interfaces/player";
 import type { EngineEventName } from "@/types";
 import type Engine from ".";
-import type { AttackContext } from "./interfaces";
+import type { AttackContext, DealDamageContext } from "./interfaces";
 
 /**
  * Responsible for propagating events and dispatching events
@@ -86,11 +85,11 @@ export default class EventManager {
     // TODO "attacked" && "beforeAttacked" event ?
   }
 
-  dealDamage({ player, source, target, damage }: Context) {
-    // TODO create conditions
-    target!.health! -= damage!;
+  dealDamage({ player, source, target, damage }: DealDamageContext) {
+    target.health -= damage;
     this.trigger("damage", { player, source, target, damage });
   }
 
+  // TODO
   destroy(ctx: Context) {}
 }

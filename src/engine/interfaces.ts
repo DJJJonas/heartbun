@@ -10,3 +10,9 @@ export interface AttackContext extends Context {
   source: CardWithAttackAndHealth;
   target: CardWithAttackAndHealth;
 }
+
+export interface DealDamageContext extends Context {
+  source: CardWithAttackAndHealth;
+  target: CardWithAttackAndHealth;
+  damage: number;
+}
