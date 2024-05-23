@@ -4,7 +4,7 @@ import type { EngineMessage } from "@/interfaces/engine_message";
 import type Player from "@/interfaces/player";
 import { drawCard, removeCardId, shuffle, shuffleCard } from "@/util";
 import EventManager from "./event_manager";
-import { newPlayer } from "./util";
+import { hasAttackAndHealth, newPlayer } from "./util";
 import type { AttackContext } from "./interfaces";
 
 export default class Engine {
@@ -139,10 +139,6 @@ export default class Engine {
   }
 
   private caseAttack(player: Player, source: Card, target: Card) {
-    function hasAttackAndHealth(card: Card) {
-      return card.attack !== undefined && card.health !== undefined;
-    }
-
     if (hasAttackAndHealth(source) && hasAttackAndHealth(target))
       this.eventManager.attack({ player, source, target } as AttackContext);
   }
