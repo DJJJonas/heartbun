@@ -90,6 +90,21 @@ export default class EventManager {
     this.trigger("damage", { player, source, target, damage });
   }
 
-  // TODO
-  destroy(ctx: Context) {}
+  // TODO create test file
+  destroy(ctx: Context) {
+    let index = -1;
+    for (let player of this.engine.players) {
+      index = player.minions.findIndex((card) => card == ctx.target);
+      if (index > -1) {
+        player.minions.slice(index, 1);
+        this.trigger("death", ctx);
+        return;
+      }
+      // TODO if pLayer.weapon
+      if (player.hero == ctx.target) {
+        this.trigger("death", ctx); // TODO win
+        return;
+      }
+    }
+  }
 }
