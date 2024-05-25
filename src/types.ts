@@ -36,6 +36,7 @@ export type HeroClass =
 export type EngineEvent = (c: Context, e: EventManager) => void;
 
 export type EngineEventName =
+  | "death"
   | "battlecry"
   | "startOfGame"
   | "mulligan"
