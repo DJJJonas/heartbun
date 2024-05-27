@@ -107,11 +107,10 @@ export default class Engine {
   }
 
   private normalMessageHandler(msg: EngineMessage) {
-    // TODO replace msg.ids by sourceID and targetID
     if (this.turnPlayerIndex !== msg.player) return;
     const player = this.turnPlayer;
-    const source = this.popCardFrom(player, msg.ids?.[0]);
-    const target = this.popCardFrom(player, msg.ids?.[1]);
+    const source = this.popCardFrom(player, msg.sourceId);
+    const target = this.popCardFrom(player, msg.targetId);
 
     switch (msg.action) {
       // case "free":

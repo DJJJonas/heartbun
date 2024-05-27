@@ -57,7 +57,7 @@ test("mock", () => {
   game.send({
     player: 0,
     action: "play",
-    ids: [p1.hand[0].id!],
+    sourceId: p1.hand[0].id,
   });
   expect(p1.minions.length).toBe(1);
   expect(p1.minions[0].name).toBe(ArgentSquire.name);
@@ -80,7 +80,8 @@ test("mock", () => {
     game.send({
       player: 0,
       action: "attack",
-      ids: [p1minion, p2hero],
+      sourceId: p1minion,
+      targetId: p2hero,
     });
     game.send({
       player: 0,
