@@ -4,8 +4,8 @@ import type { EngineMessage } from "@/interfaces/engine_message";
 import type Player from "@/interfaces/player";
 import { drawCard, removeCardId, shuffle, shuffleCard } from "@/util";
 import EventManager from "./event_manager";
-import { hasAttackAndHealth, newPlayer } from "./util";
 import type { AttackContext } from "./interfaces";
+import { hasAttackAndHealth, newPlayer } from "./util";
 
 export default class Engine {
   players: Array<Player>;
@@ -106,20 +106,19 @@ export default class Engine {
     return removeCardId(this.eventManager.allCardsFrom(player), id);
   }
 
-  // TODO create a function for each case
   private normalMessageHandler(msg: EngineMessage) {
     // TODO replace msg.ids by sourceID and targetID
     if (this.turnPlayerIndex !== msg.player) return;
     const player = this.turnPlayer;
-    const opponent = this.opponentPlayer;
     const source = this.popCardFrom(player, msg.ids?.[0]);
     const target = this.popCardFrom(player, msg.ids?.[1]);
 
     switch (msg.action) {
       // case "free":
       case "play":
-        if (!source) return;
-        this.eventManager.play({ player, source });
+        if (source) {
+          this.casePlay(player, source);
+        }
         break;
 
       case "attack":
@@ -129,7 +128,7 @@ export default class Engine {
         break;
 
       case "endturn":
-        this.eventManager.endTurn();
+        this.caseEndTurn();
         break;
 
       default:
@@ -138,9 +137,18 @@ export default class Engine {
     }
   }
 
+  private casePlay(player: Player, source: Card) {
+    this.eventManager.play({ player, source });
+  }
+
   private caseAttack(player: Player, source: Card, target: Card) {
-    if (hasAttackAndHealth(source) && hasAttackAndHealth(target))
+    if (hasAttackAndHealth(source) && hasAttackAndHealth(target)) {
       this.eventManager.attack({ player, source, target } as AttackContext);
+    }
+  }
+
+  private caseEndTurn() {
+    this.eventManager.endTurn();
   }
 
   private mulligate(player: Player, ids: number[]) {
