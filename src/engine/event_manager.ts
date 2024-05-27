@@ -3,6 +3,7 @@ import type Player from "@/interfaces/player";
 import type { EngineEventName } from "@/types";
 import type Engine from ".";
 import type { AttackContext, DealDamageContext } from "./interfaces";
+import heros from "@/collection/heros";
 
 /**
  * Responsible for propagating events and dispatching events
@@ -10,14 +11,14 @@ import type { AttackContext, DealDamageContext } from "./interfaces";
 export default class EventManager {
   get allCards() {
     return this.engine.players
-      .map((player) => this.allCardsFrom(player)) // TODO: add p.hero after impl heroes
+      .map((player) => this.allCardsFrom(player))
       .flat();
   }
 
   constructor(private engine: Engine) {}
 
   allCardsFrom(player: Player) {
-    return [...player.hand, ...player.deck, ...player.minions];
+    return [player.hero, ...player.hand, ...player.deck, ...player.minions];
   }
 
   startOfGame() {
