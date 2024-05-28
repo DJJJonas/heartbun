@@ -1,8 +1,7 @@
 import Anduin from "@/collection/heros/Priest";
-import Collection from "@/collection/set_Base/Neutral";
 import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
-import type Deck from "@/interfaces/deck";
+import type Card from "@/interfaces/card";
 import type { EngineMessage } from "@/interfaces/engine_message";
 import { range } from "@/util";
 import { expect, test } from "bun:test";
@@ -96,11 +95,10 @@ test("mock", () => {
   // game.forceWinner(0);
 });
 
-function sampleDeck(): Deck {
-  // @ts-expect-error
-  let deck: Deck = { cards: [] };
+function sampleDeck(): Array<Card> {
+  let deck: Array<Card> = [];
   // Fill deck with 30 1/1's
-  for (let i = 0; i < 30; i++) deck.cards.push({ ...ArgentSquire });
-  deck.hero = { ...Anduin };
+  deck.push({ ...Anduin });
+  for (let i = 0; i < 30; i++) deck.push({ ...ArgentSquire });
   return deck;
 }

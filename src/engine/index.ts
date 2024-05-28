@@ -1,5 +1,4 @@
 import type Card from "@/interfaces/card";
-import type Deck from "@/interfaces/deck";
 import type { EngineMessage } from "@/interfaces/engine_message";
 import type Player from "@/interfaces/player";
 import { drawCard, removeCardId, shuffle, shuffleCard } from "@/util";
@@ -25,7 +24,7 @@ export default class Engine {
     return this.players[Math.abs(this.turnPlayerIndex - 1)];
   }
 
-  constructor(deck1: Deck, deck2: Deck) {
+  constructor(deck1: Array<Card>, deck2: Array<Card>) {
     this.players = [newPlayer(deck1), newPlayer(deck2)];
     this.players.forEach((p) => {
       this.setCardDefaults(p.hero);
