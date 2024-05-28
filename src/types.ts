@@ -33,17 +33,22 @@ export type HeroClass =
   | "warlock"
   | "warrior";
 
-export type EngineEvent = (c: Context, e: EventManager) => void;
+export type Event = (c: Context, e: EventManager) => void;
 
-export type EngineEventName =
-  | "death"
-  | "battlecry"
-  | "startOfGame"
-  | "mulligan"
-  | "endOfTurn"
-  | "manaGain"
-  | "attack"
-  | "damage";
+export enum EventName {
+  Death = "death",
+  Battlecry = "battlecry",
+  StartOfGame = "startOfGame",
+  Mulligan = "mulligan",
+  EndOfTurn = "endOfTurn",
+  ManaGain = "manaGain",
+  Attack = "attack",
+  Damage = "damage",
+}
+
+export function isEventName(value: string): value is EventName {
+  return Object.values(EventName).includes(value as EventName);
+}
 
 export type EngineMessageAction =
   | "mulligan"

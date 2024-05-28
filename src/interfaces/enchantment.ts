@@ -1,4 +1,4 @@
-import type { EngineEvent, MinionTrybe } from "@/types";
+import type { Event, MinionTrybe } from "@/types";
 
 export default interface Enchantment {
   id?: number; // set during gameplay
@@ -8,5 +8,5 @@ export default interface Enchantment {
   maxHealth?: number;
   trybe?: MinionTrybe;
 
-  events: Map<string, Array<EngineEvent>>;
+  events: Map<string, Array<Event>>;
 }

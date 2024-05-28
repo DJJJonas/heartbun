@@ -1,9 +1,8 @@
 import type { Context } from "@/interfaces/event_context";
 import type Player from "@/interfaces/player";
-import type { EngineEventName } from "@/types";
+import { EventName } from "@/types";
 import type Engine from ".";
 import type { AttackContext, DealDamageContext } from "./interfaces";
-import heros from "@/collection/heros";
 
 /**
  * Responsible for propagating events and dispatching events
@@ -24,7 +23,7 @@ export default class EventManager {
   startOfGame() {
     this.engine.players.forEach((player) => {
       this.allCardsFrom(player).forEach((source) => {
-        this.trigger("startOfGame", { player, source });
+        this.trigger(EventName.StartOfGame, { player, source });
       });
     });
   }
@@ -38,7 +37,7 @@ export default class EventManager {
     // place card on board
     player.minions.push(source);
     // TODO trigger "minionSpawn" event
-    this.trigger("battlecry", { player, source });
+    this.trigger(EventName.Battlecry, { player, source });
 
     return true;
   }
@@ -48,14 +47,14 @@ export default class EventManager {
     const source = player.hero;
     this.engine.turn++;
     this.engine.turnPlayerIndex = Number(!this.engine.turnPlayerIndex);
-    this.trigger("endOfTurn", { player, source });
+    this.trigger(EventName.EndOfTurn, { player, source });
 
     this.addMaxMana({ player, source });
     this.refreshMana({ player, source });
-    this.trigger("manaGain", { player, source });
+    this.trigger(EventName.ManaGain, { player, source });
   }
 
-  trigger(eventName: EngineEventName, ctx: Context) {
+  trigger(eventName: EventName, ctx: Context) {
     this.allCards.forEach((c) => {
       const enchants = [c.defaultEnchantments, c.enchantments].flat();
       enchants.forEach((enc) => {
@@ -82,13 +81,13 @@ export default class EventManager {
     // TODO beforeAttack
     const damage = source.attack;
     this.dealDamage({ player, source, target, damage });
-    this.trigger("attack", { player, source, damage });
+    this.trigger(EventName.Attack, { player, source, damage });
     // TODO "attacked" && "beforeAttacked" event ?
   }
 
   dealDamage({ player, source, target, damage }: DealDamageContext) {
     target.health -= damage;
-    this.trigger("damage", { player, source, target, damage });
+    this.trigger(EventName.Damage, { player, source, target, damage });
   }
 
   // TODO create test file
@@ -98,12 +97,12 @@ export default class EventManager {
       index = player.minions.findIndex((card) => card == ctx.target);
       if (index > -1) {
         player.minions.slice(index, 1);
-        this.trigger("death", ctx);
+        this.trigger(EventName.Death, ctx);
         return;
       }
       // TODO if pLayer.weapon
       if (player.hero == ctx.target) {
-        this.trigger("death", ctx); // TODO win
+        this.trigger(EventName.Death, ctx); // TODO win
         return;
       }
     }
