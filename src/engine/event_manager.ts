@@ -78,11 +78,9 @@ export default class EventManager {
   attack({ player, source, target }: AttackContext) {
     source.health -= target.attack;
     target.health -= source.attack;
-    // TODO beforeAttack
     const damage = source.attack;
-    this.dealDamage({ player, source, target, damage });
     this.trigger(EventName.Attack, { player, source, damage });
-    // TODO "attacked" && "beforeAttacked" event ?
+    this.dealDamage({ player, source, target, damage });
   }
 
   dealDamage({ player, source, target, damage }: DealDamageContext) {
