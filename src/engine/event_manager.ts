@@ -36,7 +36,7 @@ export default class EventManager {
     player.hand.splice(srcIndex, 1)[0];
     // place card on board
     player.minions.push(source);
-    // TODO trigger "minionSpawn" event
+    this.trigger(EventName.Spawn, { player, source });
     this.trigger(EventName.Battlecry, { player, source });
 
     return true;

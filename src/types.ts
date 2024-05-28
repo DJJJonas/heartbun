@@ -44,6 +44,7 @@ export enum EventName {
   ManaGain = "manaGain",
   Attack = "attack",
   Damage = "damage",
+  Spawn = "spawn",
 }
 
 export function isEventName(value: string): value is EventName {
