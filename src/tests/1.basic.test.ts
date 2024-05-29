@@ -3,6 +3,7 @@ import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
 import type Card from "@/interfaces/card";
 import type { EngineMessage } from "@/interfaces/engine_message";
+import { MessageAction } from "@/types";
 import { range } from "@/util";
 import { expect, test } from "bun:test";
 
@@ -27,12 +28,12 @@ test("mock", () => {
   // will switch their whole hand
   game.send({
     player: 0,
-    action: "mulligan",
+    action: MessageAction.Mulligan,
     ids: p1.hand.map((card) => card.id!),
   });
   game.send({
     player: 1,
-    action: "mulligan",
+    action: MessageAction.Mulligan,
     ids: p2.hand.map((card) => card.id!),
   });
   expect(p1.hand).toBeArrayOfSize(3);
@@ -55,7 +56,7 @@ test("mock", () => {
   // turn will be the one who played
   game.send({
     player: 0,
-    action: "play",
+    action: MessageAction.Play,
     sourceId: p1.hand[0].id,
   });
   expect(p1.minions.length).toBe(1);
@@ -63,13 +64,13 @@ test("mock", () => {
   // Player 1 end turn
   game.send({
     player: 0,
-    action: "endturn",
+    action: MessageAction.EndTurn,
   });
   expect(game.turnPlayerIndex).toBe(1); // Second player's turn
   // Player 2 skip turn
   game.send({
     player: 1,
-    action: "endturn",
+    action: MessageAction.EndTurn,
   });
   expect(game.turnPlayerIndex).toBe(0); // First player's turn
 
@@ -78,17 +79,17 @@ test("mock", () => {
   range(30).forEach((_) => {
     game.send({
       player: 0,
-      action: "attack",
+      action: MessageAction.Attack,
       sourceId: p1minion,
       targetId: p2hero,
     });
     game.send({
       player: 0,
-      action: "endturn",
+      action: MessageAction.EndTurn,
     });
     game.send({
       player: 1,
-      action: "endturn",
+      action: MessageAction.EndTurn,
     });
   });
   // End game and set player one to winner

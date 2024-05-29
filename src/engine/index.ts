@@ -1,6 +1,7 @@
 import type Card from "@/interfaces/card";
 import type { EngineMessage } from "@/interfaces/engine_message";
 import type Player from "@/interfaces/player";
+import { MessageAction } from "@/types";
 import { drawCard, removeCardId, shuffle, shuffleCard } from "@/util";
 import EventManager from "./event_manager";
 import type { AttackContext } from "./interfaces";
@@ -53,12 +54,12 @@ export default class Engine {
 
     p1.messageChannel({
       type: "request",
-      action: "mulligan",
+      action: MessageAction.Mulligan,
     });
 
     p2.messageChannel({
       type: "request",
-      action: "mulligan",
+      action: MessageAction.Mulligan,
     });
   }
 
@@ -130,7 +131,7 @@ export default class Engine {
         break;
 
       default:
-        throw new Error("TODO");
+        throw new Error("invalid action");
       //
     }
   }

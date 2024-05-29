@@ -51,9 +51,14 @@ export function isEventName(value: string): value is EventName {
   return Object.values(EventName).includes(value as EventName);
 }
 
-export type EngineMessageAction =
-  | "mulligan"
-  | "free"
-  | "play"
-  | "attack"
-  | "endturn";
+export enum MessageAction {
+  Mulligan = "mulligan",
+  Free = "free",
+  Play = "play",
+  Attack = "attack",
+  EndTurn = "endturn",
+}
+
+export function isMessageAction(value: string): value is MessageAction {
+  return Object.values(MessageAction).includes(value as MessageAction);
+}
