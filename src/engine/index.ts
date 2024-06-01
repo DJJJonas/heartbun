@@ -162,8 +162,21 @@ export default class Engine {
     }
   }
 
-  private forceWinner(player: number) {
-    throw new Error("TODO");
+  private setWinner(player: number) {
+    const winner = this.players[player];
+    const looser = this.players[Math.abs(player - 1)];
+
+    winner.messageChannel({
+      type: "response",
+      action: MessageAction.Win,
+    });
+
+    looser.messageChannel({
+      type: "response",
+      action: MessageAction.Lose,
+    });
+
+    this.messageHandler = () => {};
   }
 
   private setCardDefaults(card: Card) {

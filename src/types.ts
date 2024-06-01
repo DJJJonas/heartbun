@@ -57,6 +57,8 @@ export enum MessageAction {
   Play = "play",
   Attack = "attack",
   EndTurn = "endturn",
+  Win = "win",
+  Lose = "lose",
 }
 
 export function isMessageAction(value: string): value is MessageAction {
