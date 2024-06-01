@@ -69,6 +69,23 @@ export default class Engine {
     this.messageHandler(msg);
   }
 
+  setWinner(player: number) {
+    const winner = this.players[player];
+    const looser = this.players[Math.abs(player - 1)];
+
+    winner.messageChannel({
+      type: "response",
+      action: MessageAction.Win,
+    });
+
+    looser.messageChannel({
+      type: "response",
+      action: MessageAction.Lose,
+    });
+
+    this.messageHandler = () => {};
+  }
+
   /**
    * # Mulligan Handler
    * ## Case scenarios
@@ -160,23 +177,6 @@ export default class Engine {
       if (!card) break;
       player.hand.push(card);
     }
-  }
-
-  private setWinner(player: number) {
-    const winner = this.players[player];
-    const looser = this.players[Math.abs(player - 1)];
-
-    winner.messageChannel({
-      type: "response",
-      action: MessageAction.Win,
-    });
-
-    looser.messageChannel({
-      type: "response",
-      action: MessageAction.Lose,
-    });
-
-    this.messageHandler = () => {};
   }
 
   private setCardDefaults(card: Card) {

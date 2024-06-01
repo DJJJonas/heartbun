@@ -86,21 +86,26 @@ export default class EventManager {
   dealDamage({ player, source, target, damage }: DealDamageContext) {
     target.health -= damage;
     this.trigger(EventName.Damage, { player, source, target, damage });
+    if (target.health <= 0) {
+      this.destroy({ player, source, target });
+    }
   }
 
   // TODO create test file
   destroy(ctx: Context) {
-    let index = -1;
     for (let player of this.engine.players) {
-      index = player.minions.findIndex((card) => card == ctx.target);
-      if (index > -1) {
-        player.minions.slice(index, 1);
+      let cardIndex = player.minions.findIndex((card) => card == ctx.target);
+      // Card is a minion
+      if (cardIndex > -1) {
+        player.minions.slice(cardIndex, 1);
         this.trigger(EventName.Death, ctx);
         return;
       }
-      // TODO if pLayer.weapon
-      if (player.hero == ctx.target) {
-        this.trigger(EventName.Death, ctx); // TODO win
+      // TODO if player.weapon
+      // Card is a hero
+      if (ctx.target == player.hero) {
+        const opponentIndex = this.engine.players[0] == player ? 0 : 1;
+        this.engine.setWinner(opponentIndex);
         return;
       }
     }
