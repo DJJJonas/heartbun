@@ -97,7 +97,7 @@ export default class EventManager {
       let cardIndex = player.minions.findIndex((card) => card == ctx.target);
       // Card is a minion
       if (cardIndex > -1) {
-        player.minions.slice(cardIndex, 1);
+        player.minions.splice(cardIndex, 1);
         this.trigger(EventName.Death, ctx);
         return;
       }
