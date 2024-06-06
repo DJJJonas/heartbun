@@ -1,16 +1,18 @@
 import Anduin from "@/collection/heros/Priest";
+import Ysera from "@/collection/set_Base/Neutral/Ysera";
+import type { EngineMessage } from "@/interfaces/engine_message";
 import { expect, test } from "bun:test";
 import Engine from "..";
-import Ysera from "@/collection/set_Base/Neutral/Ysera";
+import { MessageAction } from "@/types";
 
 test("mock", () => {
   const game = new Engine([{ ...Anduin }], [{ ...Anduin }]);
   const ysera = { ...Ysera };
-  game.players.forEach(
-    (p, i) =>
-      (p.messageChannel = (msg) => console.log(`Player ${i}: ${msg.action}`))
-  );
+  let lastMsg: EngineMessage;
+  game.players.forEach((p) => (p.messageChannel = (msg) => (lastMsg = msg)));
   game.start();
+  game.send({ action: MessageAction.Mulligan, player: 0, ids: [] });
+  game.send({ action: MessageAction.Mulligan, player: 1, ids: [] });
   // TODO create spawn method and update this to game.eventManager.spawn(...)
   game.players[0].minions.push(ysera);
   expect(game.players[0].minions).toBeArrayOfSize(1);
