@@ -91,7 +91,6 @@ export default class EventManager {
     }
   }
 
-  // TODO create test file
   destroy(ctx: Context) {
     for (let player of this.engine.players) {
       let cardIndex = player.minions.findIndex((card) => card == ctx.target);
