@@ -109,4 +109,12 @@ export default class EventManager {
       }
     }
   }
+
+  // TODO: create SpawnContext interface
+  spawn(ctx: Context) {
+    if (ctx.player.minions.length > 7) return;
+
+    ctx.player.minions.push(ctx.target!);
+    this.trigger(EventName.Spawn, ctx);
+  }
 }
