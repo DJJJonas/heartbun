@@ -2,7 +2,11 @@ import type { Context } from "@/interfaces/event_context";
 import type Player from "@/interfaces/player";
 import { EventName } from "@/types";
 import type Engine from ".";
-import type { AttackContext, DealDamageContext } from "./interfaces";
+import type {
+  AttackContext,
+  DealDamageContext,
+  SpawnContext,
+} from "./interfaces";
 
 /**
  * Responsible for propagating events and dispatching events
@@ -110,11 +114,10 @@ export default class EventManager {
     }
   }
 
-  // TODO: create SpawnContext interface
-  spawn(ctx: Context) {
+  spawn(ctx: SpawnContext) {
     if (ctx.player.minions.length > 7) return;
 
-    ctx.player.minions.push(ctx.target!);
+    ctx.player.minions.push(ctx.target);
     this.trigger(EventName.Spawn, ctx);
   }
 }

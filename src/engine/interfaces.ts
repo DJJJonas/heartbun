@@ -16,3 +16,8 @@ export interface DealDamageContext extends Context {
   target: CardWithAttackAndHealth;
   damage: number;
 }
+
+export interface SpawnContext extends Context {
+  source: Card;
+  target: Card;
+}
