@@ -95,7 +95,6 @@ export default class Engine {
    *    - If both players are ready -> Message Handler goes to `normalMessageHandler`
    */
   private mulliganMessageHandler(msg: EngineMessage) {
-    // TODO fix non mulligan events being able to be played on mulligan phase
     const pIndex = msg.player!;
     const player = this.players[pIndex];
     const playerMulligated = this.playerMulligated[pIndex];

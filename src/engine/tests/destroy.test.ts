@@ -1,9 +1,9 @@
 import Anduin from "@/collection/heros/Priest";
 import Ysera from "@/collection/set_Base/Neutral/Ysera";
 import type { EngineMessage } from "@/interfaces/engine_message";
+import { MessageAction } from "@/types";
 import { expect, test } from "bun:test";
 import Engine from "..";
-import { MessageAction } from "@/types";
 
 test("mock", () => {
   const game = new Engine([{ ...Anduin }], [{ ...Anduin }]);
