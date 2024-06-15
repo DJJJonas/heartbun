@@ -16,6 +16,5 @@ export default interface Card {
   rarity?: Rarity; // some generated cards (tokens) and base cards don't have rarity
   trybe?: MinionTrybe;
 
-  defaultEnchantments?: Array<Enchantment>; // enchantment of the card's text
   enchantments?: Array<Enchantment>; // set during gameplay
 }
