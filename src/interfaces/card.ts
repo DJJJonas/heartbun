@@ -1,5 +1,6 @@
 import type { CardType, HeroClass, MinionTrybe, Rarity } from "@/types";
 import type Enchantment from "./enchantment";
+import type Engine from "@/engine";
 
 export default interface Card {
   type: CardType;
@@ -17,4 +18,6 @@ export default interface Card {
   trybe?: MinionTrybe;
 
   enchantments?: Array<Enchantment>; // set during gameplay
+
+  requestTargets?: (eng: Engine) => Array<Card>;
 }
