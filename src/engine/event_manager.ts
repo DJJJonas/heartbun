@@ -60,7 +60,7 @@ export default class EventManager {
 
   trigger(eventName: EventName, ctx: Context) {
     this.allCards.forEach((c) => {
-      const enchants = [c.defaultEnchantments, c.enchantments].flat();
+      const enchants = [c.enchantments].flat();
       enchants.forEach((enc) => {
         const evs = enc?.events.get(eventName);
         evs?.forEach((ev) => ev(ctx, this));
