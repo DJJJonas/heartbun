@@ -19,5 +19,5 @@ export default interface Card {
 
   enchantments?: Array<Enchantment>; // set during gameplay
 
-  requestTargets?: (eng: Engine) => Array<Card>;
+  requestTargets?: (eng: Engine) => Set<number>;
 }
