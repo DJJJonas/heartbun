@@ -33,15 +33,15 @@ export default class EventManager {
   }
 
   // plays card from player's hand and returns if the action was completed
-  play({ player, source }: Context) {
+  play({ player, source, target }: Context) {
     const srcIndex = player.hand.findIndex((c) => c === source);
     if (srcIndex < 0) return false;
     // remove card from hand
     player.hand.splice(srcIndex, 1)[0];
     // place card on board
     player.minions.push(source);
-    this.trigger(EventName.Spawn, { player, source });
-    this.trigger(EventName.Battlecry, { player, source });
+    this.trigger(EventName.Spawn, { player, source, target });
+    this.trigger(EventName.Battlecry, { player, source, target });
 
     return true;
   }
