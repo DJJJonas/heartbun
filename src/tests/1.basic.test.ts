@@ -7,8 +7,7 @@ import { MessageAction } from "@/types";
 import { range } from "@/util";
 import { expect, test } from "bun:test";
 
-// Mock
-test("mock", () => {
+test("Basic test", () => {
   const player1deck = sampleDeck();
   const player2deck = sampleDeck();
   // Decks will be shuffled.

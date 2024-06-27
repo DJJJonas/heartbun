@@ -5,7 +5,7 @@ import { MessageAction } from "@/types";
 import { test, expect } from "bun:test";
 import Engine from "..";
 
-test("battlecry", () => {
+test("Trigger 'battlecry' keyword", () => {
   const game = new Engine([{ ...Anduin }], [{ ...Anduin }]);
   const archer = { ...ElvenArcher };
 

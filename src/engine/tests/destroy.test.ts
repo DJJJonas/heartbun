@@ -5,7 +5,7 @@ import { MessageAction } from "@/types";
 import { expect, test } from "bun:test";
 import Engine from "..";
 
-test("mock", () => {
+test("'Destroy' event", () => {
   const game = new Engine([{ ...Anduin }], [{ ...Anduin }]);
   const ysera = { ...Ysera };
   let lastMsg: EngineMessage;
