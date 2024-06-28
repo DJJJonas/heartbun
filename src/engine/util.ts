@@ -1,5 +1,6 @@
 import type Card from "@/interfaces/card";
 import type Player from "@/interfaces/player";
+import type { CardWithAttackAndHealth } from "./interfaces";
 
 export function newPlayer(deck: Array<Card>): Player {
   if (deck.length === 0) throw new Error("deck does not have a hero");
@@ -17,6 +18,8 @@ export function newPlayer(deck: Array<Card>): Player {
   };
 }
 
-export function hasAttackAndHealth(card: Card) {
+export function hasAttackAndHealth(
+  card: Card
+): card is CardWithAttackAndHealth {
   return card.attack !== undefined && card.health !== undefined;
 }
