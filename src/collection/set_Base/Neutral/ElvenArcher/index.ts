@@ -1,3 +1,4 @@
+import { hasAttackAndHealth } from "@/engine/util";
 import type Card from "@/interfaces/card";
 import { EventName, type Event } from "@/types";
 
@@ -25,7 +26,8 @@ const ElvenArcher: Card = {
 
 events.set(EventName.Battlecry, [
   ({ player, source, target }, em) => {
-    em.dealDamage({ player, source, target, damage: 1 });
+    if (hasAttackAndHealth(source) && hasAttackAndHealth(target!))
+      em.dealDamage({ player, source, target, damage: 1 });
   },
 ]);
 
