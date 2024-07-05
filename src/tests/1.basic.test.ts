@@ -1,11 +1,20 @@
 import Anduin from "@/collection/heros/Priest";
-import ArgentSquire from "@/collection/set_Base/Neutral/ArgentSquire";
 import Engine from "@/engine";
 import type Card from "@/interfaces/card";
 import type { EngineMessage } from "@/interfaces/engine_message";
 import { MessageAction } from "@/types";
 import { range } from "@/util";
 import { expect, test } from "bun:test";
+
+const ArgentSquire: Card = {
+  type: "minion",
+  name: "Argent Squire",
+  cost: 0,
+  text: "Divine Shield",
+  class: "neutral",
+  attack: 1,
+  health: 1,
+};
 
 test("Basic test", () => {
   const player1deck = sampleDeck();

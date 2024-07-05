@@ -1,9 +1,19 @@
 import Anduin from "@/collection/heros/Priest";
-import Ysera from "@/collection/set_Base/Neutral/Ysera";
+import type Card from "@/interfaces/card";
 import type { EngineMessage } from "@/interfaces/engine_message";
 import { MessageAction } from "@/types";
 import { expect, test } from "bun:test";
 import Engine from "..";
+
+const Ysera: Card = {
+  type: "minion",
+  name: "Ysera",
+  cost: 0,
+  text: "",
+  class: "neutral",
+  attack: 4,
+  health: 12,
+};
 
 test("Deal damage event", () => {
   const game = new Engine([{ ...Anduin }], [{ ...Anduin }]);
